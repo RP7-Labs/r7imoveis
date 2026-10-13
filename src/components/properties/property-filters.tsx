@@ -217,7 +217,7 @@ export function PropertyFilters({
       <aside className="hidden w-72 shrink-0 lg:block">
         <div className="sticky top-24 rounded-2xl bg-white p-6 shadow-soft">
           <div className="mb-5 flex items-center justify-between">
-            <h2 className="font-serif text-lg text-petrol-800">Filtros</h2>
+            <h2 className="font-display text-lg text-petrol-800">Filtros</h2>
             {activeCount > 0 && (
               <span className="rounded-full bg-petrol-500 px-2 py-0.5 text-xs text-white">
                 {activeCount}
@@ -253,7 +253,7 @@ export function PropertyFilters({
             className="fixed inset-0 z-50 flex flex-col bg-offwhite"
           >
             <div className="flex items-center justify-between border-b border-sand px-4 py-4">
-              <h2 className="font-serif text-lg text-petrol-800">Filtros</h2>
+              <h2 className="font-display text-lg text-petrol-800">Filtros</h2>
               <button
                 type="button"
                 onClick={() => setOpen(false)}

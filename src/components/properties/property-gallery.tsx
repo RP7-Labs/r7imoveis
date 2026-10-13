@@ -47,7 +47,7 @@ export function PropertyGallery({
   if (urls.length === 0) {
     return (
       <div className="flex aspect-[16/10] items-center justify-center rounded-2xl bg-petrol-50 text-petrol-300">
-        <span className="font-serif">Fotos em breve</span>
+        <span className="font-display">Fotos em breve</span>
       </div>
     );
   }

@@ -84,7 +84,7 @@ export function PropertyCard({
           />
         ) : (
           <div className="flex h-full items-center justify-center bg-petrol-50 text-petrol-300">
-            <span className="font-serif text-sm">Sem foto</span>
+            <span className="font-display text-sm">Sem foto</span>
           </div>
         )}
         <div className="absolute left-3 top-3 flex gap-2">
@@ -102,7 +102,7 @@ export function PropertyCard({
           {propertyTypeLabel(property.property_type)}
           {property.reference_code && ` · Ref. ${property.reference_code}`}
         </p>
-        <h3 className="mt-1.5 font-serif text-lg leading-snug text-petrol-800 group-hover:text-petrol-600">
+        <h3 className="mt-1.5 font-display text-lg leading-snug text-petrol-800 group-hover:text-petrol-600">
           {property.title}
         </h3>
         <p className="mt-1 text-sm text-graphite-500">
@@ -124,7 +124,7 @@ export function PropertyCard({
           </ul>
         )}
 
-        <p className="mt-4 font-serif text-xl font-semibold text-petrol-700">
+        <p className="mt-4 font-display text-xl font-semibold text-petrol-700">
           {formatPrice(property.price, property.currency, property.purpose)}
         </p>
       </div>

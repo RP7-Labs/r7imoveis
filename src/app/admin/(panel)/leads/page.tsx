@@ -52,7 +52,7 @@ export default async function AdminLeadsPage({
 
   return (
     <div>
-      <h1 className="font-serif text-2xl text-petrol-900">Leads</h1>
+      <h1 className="font-display text-2xl text-petrol-900">Leads</h1>
       <p className="mt-1 text-sm text-graphite-500">
         {count ?? 0} contato{(count ?? 0) === 1 ? "" : "s"} recebido
         {(count ?? 0) === 1 ? "" : "s"} pelo site.

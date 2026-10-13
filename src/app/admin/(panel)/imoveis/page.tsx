@@ -72,7 +72,7 @@ export default async function AdminImoveisPage({
     <div>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="font-serif text-2xl text-petrol-900">Imóveis</h1>
+          <h1 className="font-display text-2xl text-petrol-900">Imóveis</h1>
           <p className="mt-1 text-sm text-graphite-500">
             {count ?? 0} imóve{(count ?? 0) === 1 ? "l" : "is"} cadastrado
             {(count ?? 0) === 1 ? "" : "s"}

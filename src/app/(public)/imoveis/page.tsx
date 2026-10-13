@@ -48,7 +48,7 @@ export default async function ImoveisPage({
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-champagne-500">
           Catálogo
         </p>
-        <h1 className="mt-2 font-serif text-3xl text-petrol-800 sm:text-4xl">
+        <h1 className="mt-2 font-display text-3xl text-petrol-800 sm:text-4xl">
           Imóveis
         </h1>
       </header>

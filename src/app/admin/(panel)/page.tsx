@@ -80,7 +80,7 @@ export default async function AdminDashboard() {
     <div>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="font-serif text-2xl text-petrol-900">Dashboard</h1>
+          <h1 className="font-display text-2xl text-petrol-900">Dashboard</h1>
           <p className="mt-1 text-sm text-graphite-500">
             Visão geral do catálogo e dos contatos recebidos.
           </p>
@@ -106,7 +106,7 @@ export default async function AdminDashboard() {
               </span>
               <span className="text-sm text-graphite-500">{s.label}</span>
             </div>
-            <p className="mt-3 font-serif text-3xl text-petrol-900">
+            <p className="mt-3 font-display text-3xl text-petrol-900">
               {s.value}
             </p>
           </div>
@@ -116,7 +116,7 @@ export default async function AdminDashboard() {
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
         <section className="rounded-2xl bg-white p-6 shadow-soft">
           <div className="flex items-center justify-between">
-            <h2 className="font-serif text-lg text-petrol-900">
+            <h2 className="font-display text-lg text-petrol-900">
               Leads recentes
             </h2>
             <Link
@@ -156,7 +156,7 @@ export default async function AdminDashboard() {
         </section>
 
         <section className="rounded-2xl bg-white p-6 shadow-soft">
-          <h2 className="font-serif text-lg text-petrol-900">Atalhos</h2>
+          <h2 className="font-display text-lg text-petrol-900">Atalhos</h2>
           <ul className="mt-4 space-y-2.5">
             {[
               { href: "/admin/imoveis/novo", label: "Cadastrar novo imóvel" },

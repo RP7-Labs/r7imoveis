@@ -101,10 +101,24 @@ admin.
   perfil `@r7imoveisbalneariocamboriu` → `@r7imoveissc` deve ser feita no
   próprio Instagram; o site aponta para a URL cadastrada.
 
-## Pendências do proprietário
+## Identidade visual
 
-- [ ] Arquivo oficial da logo → `public/brand/logo.svg` (ou upload em
-      Configurações → Identidade visual)
+Aplicada a partir do kit oficial `R7_Kit_Visual_v2` (Manual de Marca R7):
+
+- **Paleta oficial**: verde `#3F595B`, champagne `#C9BDAB`, branco e preto —
+  tokens em `src/app/globals.css`.
+- **Tipografia**: Montserrat (títulos, via next/font) + Helvetica/Arial
+  (textos) — `src/app/layout.tsx`.
+- **Logo**: lockup raster em `public/brand/` (ver `public/brand/README.md`).
+- **Favicons**: `src/app/favicon.ico`, `icon.png`, `apple-icon.png` +
+  conjunto completo em `public/icons/`.
+- **Imagens ilustrativas** (recortes do manual): `public/images/` — usadas
+  apenas em hero, categorias, banner e institucional. **Nunca** como foto de
+  imóvel real; as fotos dos imóveis vêm do Supabase Storage.
+- Fonte vetorial da logo não foi fornecida (apenas raster) — solicitar ao
+  designer se necessário.
+
+## Pendências do proprietário
 - [ ] Número oficial de WhatsApp
 - [ ] Telefone, e-mail, endereço, horário de atendimento
 - [ ] Foto do hero da home (mín. 1920px)

@@ -18,7 +18,7 @@ export default async function AdminPaginasPage() {
 
   return (
     <div>
-      <h1 className="font-serif text-2xl text-petrol-900">Conteúdo do site</h1>
+      <h1 className="font-display text-2xl text-petrol-900">Conteúdo do site</h1>
       <p className="mb-6 mt-1 text-sm text-graphite-500">
         Textos da página inicial, seção institucional e rodapé.
       </p>

@@ -1,29 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  /* R7 Investimentos Imobiliários — design tokens */
-  --color-petrol-50: #eef4f4;
-  --color-petrol-100: #d7e4e4;
-  --color-petrol-200: #b2c9c9;
-  --color-petrol-300: #83a7a7;
-  --color-petrol-400: #5c8585;
-  --color-petrol-500: #315756;
-  --color-petrol-600: #2b4b4a;
-  --color-petrol-700: #243f3e;
-  --color-petrol-800: #1d3332;
-  --color-petrol-900: #162727;
-  --color-petrol-950: #0d1919;
+  /* R7 Investimentos Imobiliários — tokens oficiais (Manual de Marca, p. 6)
+     Verde #3F595B · Champagne #C9BDAB · Branco #FFFFFF · Preto #000000 */
+  --color-petrol-50: #eff3f3;
+  --color-petrol-100: #dfe7e7;
+  --color-petrol-200: #bfcdce;
+  --color-petrol-300: #94acae;
+  --color-petrol-400: #698588;
+  --color-petrol-500: #3f595b;
+  --color-petrol-600: #374e50;
+  --color-petrol-700: #2e4244;
+  --color-petrol-800: #243436;
+  --color-petrol-900: #1b2829;
+  --color-petrol-950: #101819;
 
-  --color-champagne-50: #faf7f1;
-  --color-champagne-100: #f3ecdf;
-  --color-champagne-200: #e8dcc4;
-  --color-champagne-300: #d9c5a8;
-  --color-champagne-400: #c9ab84;
-  --color-champagne-500: #b89267;
-  --color-champagne-600: #a17a52;
-  --color-champagne-700: #81613f;
-  --color-champagne-800: #684e35;
-  --color-champagne-900: #55402d;
+  --color-champagne-50: #faf8f4;
+  --color-champagne-100: #f2ede3;
+  --color-champagne-200: #e5ddcc;
+  --color-champagne-300: #c9bdab;
+  --color-champagne-400: #b6a78f;
+  --color-champagne-500: #a39070;
+  --color-champagne-600: #8a7759;
+  --color-champagne-700: #6f6049;
+  --color-champagne-800: #5a4e3d;
+  --color-champagne-900: #4a4034;
 
   --color-offwhite: #f8f6f1;
   --color-sand: #eae2d6;
@@ -40,8 +41,9 @@
   --color-graphite-800: #202323;
   --color-graphite-900: #171a1a;
 
-  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  /* Tipografia oficial (Manual, p. 5): Montserrat + Helvetica */
+  --font-display: var(--font-montserrat), Montserrat, "Helvetica Neue", sans-serif;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --shadow-soft: 0 1px 2px rgb(23 26 26 / 0.04), 0 8px 24px rgb(23 26 26 / 0.06);
   --shadow-card: 0 1px 3px rgb(23 26 26 / 0.06), 0 12px 32px -8px rgb(23 26 26 / 0.12);

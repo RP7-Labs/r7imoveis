@@ -35,7 +35,7 @@ export default async function EditarImovelPage({
     <div>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="font-serif text-2xl text-petrol-900">
+          <h1 className="font-display text-2xl text-petrol-900">
             Editar imóvel
           </h1>
           <p className="mt-1 text-sm text-graphite-500">

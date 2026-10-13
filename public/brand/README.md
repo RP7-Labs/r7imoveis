@@ -1,23 +1,33 @@
 # Assets da marca R7
 
-Coloque aqui os arquivos oficiais da logomarca da R7 Investimentos
-Imobiliários.
+Arquivos oficiais extraídos do kit `R7_Kit_Visual_v2` (Manual de Marca R7).
 
-## Arquivos esperados
+## Arquivos
 
-| Arquivo | Uso | Formato recomendado |
-|---|---|---|
-| `logo.svg` | Header, footer, login do admin | SVG (ou PNG com fundo transparente) |
-| `logo-light.svg` | Variante para fundos escuros | SVG/PNG |
-| `favicon` | Substituir `src/app/favicon.ico` | ICO/PNG 32–512px |
-| `og-default.png` | Imagem padrão de Open Graph | PNG 1200×630 |
+| Arquivo | Uso |
+|---|---|
+| `r7-logo.jpg` (800×800) | Lockup oficial — header, footer, admin |
+| `r7-logo-1200.jpg` (1200×1200) | Versão maior para usos futuros |
+| `r7-logo-fonte-original.jpg` (640×640) | Arte de origem (backup) |
 
-## Importante
+## Favicons
 
-- **Não redesenhe o monograma.** Use apenas a arte original fornecida pela
-  marca. Variações devem ser adaptações técnicas (tamanho, fundo, formato).
-- `logo.svg` atual é um **placeholder tipográfico** — substitua pelo arquivo
-  oficial assim que disponível.
-- A logo também pode ser enviada pelo backoffice em
-  **Configurações → Identidade** (fica no bucket `site-assets` do Supabase e
-  tem prioridade sobre este arquivo).
+Os ícones oficiais do kit estão aplicados via convenção do Next.js:
+
+- `src/app/favicon.ico` — ICO multirresolução
+- `src/app/icon.png` — 192×192
+- `src/app/apple-icon.png` — 180×180 (apple touch)
+
+O conjunto completo de tamanhos PNG fica em `public/icons/`.
+
+## Regras
+
+- **Não redesenhar nem distorcer o monograma.** A arte é raster (JPG quadrado
+  sobre verde petróleo) — exibir em moldura quadrada/arredondada mantendo a
+  proporção 1:1.
+- A logo também pode ser substituída pelo backoffice em
+  **Configurações → Identidade** (bucket `site-assets`), que tem prioridade
+  sobre este arquivo — usar apenas com arte oficial.
+- Paleta oficial (Manual, p. 6): verde `#3F595B`, champagne `#C9BDAB`,
+  branco `#FFFFFF`, preto `#000000` — tokens em `src/app/globals.css`.
+- Tipografia oficial (Manual, p. 5): Montserrat (títulos) e Helvetica (textos).

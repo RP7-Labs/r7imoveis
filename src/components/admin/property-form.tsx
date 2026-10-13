@@ -24,7 +24,7 @@ function Section({
 }) {
   return (
     <section className="rounded-2xl bg-white p-6 shadow-soft">
-      <h2 className="mb-5 font-serif text-lg text-petrol-900">{title}</h2>
+      <h2 className="mb-5 font-display text-lg text-petrol-900">{title}</h2>
       {children}
     </section>
   );

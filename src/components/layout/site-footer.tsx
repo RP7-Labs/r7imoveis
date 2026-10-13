@@ -38,7 +38,7 @@ export function SiteFooter({
         <div>
           <Logo
             src={storageUrl(settings.logo_path, STORAGE_BUCKETS.siteAssets)}
-            variant="light"
+            size="lg"
           />
           {settings.tagline && (
             <p className="mt-4 text-sm text-petrol-200">{settings.tagline}</p>

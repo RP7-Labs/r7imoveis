@@ -1,9 +1,5 @@
 import {
   ArrowRight,
-  Building2,
-  Home,
-  KeyRound,
-  Landmark,
   MapPin,
   MessageCircle,
   TrendingUp,
@@ -29,31 +25,28 @@ export default async function HomePage() {
     settings.whatsapp_number,
     settings.whatsapp_message ?? undefined,
   );
-  const heroImage = storageUrl(
-    settings.hero_image_path,
-    STORAGE_BUCKETS.siteAssets,
-  );
+  const heroImage =
+    storageUrl(settings.hero_image_path, STORAGE_BUCKETS.siteAssets) ??
+    "/images/hero/r7-hero-skyline.jpg";
 
   return (
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-petrol-900">
-        {heroImage && (
-          <Image
-            src={heroImage}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover opacity-40"
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-b from-petrol-900/60 via-petrol-900/40 to-petrol-900" />
+        <Image
+          src={heroImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-petrol-950/70 via-petrol-900/55 to-petrol-950/80" />
         <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-20 sm:px-6 sm:pt-28 lg:px-8">
           <p className="text-sm font-medium uppercase tracking-[0.22em] text-champagne-300">
             {settings.tagline}
           </p>
-          <h1 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 max-w-3xl font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
             {settings.hero_title}
           </h1>
           {settings.hero_subtitle && (
@@ -94,7 +87,7 @@ export default async function HomePage() {
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-champagne-500">
               Seleção R7
             </p>
-            <h2 className="mt-2 font-serif text-3xl text-petrol-800 sm:text-4xl">
+            <h2 className="mt-2 font-display text-3xl text-petrol-800 sm:text-4xl">
               Imóveis em destaque
             </h2>
           </div>
@@ -122,42 +115,90 @@ export default async function HomePage() {
         </Suspense>
       </section>
 
-      {/* Categorias */}
+      {/* Categorias — tiles oficiais do manual de marca */}
       <section className="border-y border-sand bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl text-petrol-800">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-champagne-500">
+            Portfólio
+          </p>
+          <h2 className="mt-2 font-display text-3xl text-petrol-800 sm:text-4xl">
             Explore por categoria
           </h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: Building2, label: "Apartamentos", href: "/imoveis?property_type=apartamento" },
-              { icon: Home, label: "Casas", href: "/imoveis?property_type=casa" },
-              { icon: Landmark, label: "Terrenos", href: "/imoveis?property_type=terreno" },
-              { icon: KeyRound, label: "Locação", href: "/imoveis?purpose=locacao" },
+              {
+                label: "Apartamentos",
+                href: "/imoveis?property_type=apartamento",
+                img: "/images/categorias/apartamentos.jpg",
+              },
+              {
+                label: "Casas",
+                href: "/imoveis?property_type=casa",
+                img: "/images/categorias/casas.jpg",
+              },
+              {
+                label: "Comerciais",
+                href: "/imoveis?property_type=comercial",
+                img: "/images/categorias/comerciais.jpg",
+              },
+              {
+                label: "Terrenos",
+                href: "/imoveis?property_type=terreno",
+                img: "/images/categorias/terrenos.jpg",
+              },
             ].map((c) => (
               <Link
                 key={c.label}
                 href={c.href}
-                className="group flex items-center gap-4 rounded-2xl border border-sand bg-offwhite p-5 transition-colors hover:border-champagne-400 hover:bg-champagne-50"
+                aria-label={`Ver imóveis: ${c.label}`}
+                className="group relative block overflow-hidden rounded-2xl shadow-soft transition-shadow hover:shadow-card"
               >
-                <span className="rounded-xl bg-petrol-50 p-3 text-petrol-600 transition-colors group-hover:bg-champagne-200 group-hover:text-petrol-700">
-                  <c.icon className="size-6" aria-hidden />
+                <span className="relative block aspect-[8/7]">
+                  <Image
+                    src={c.img}
+                    alt={c.label}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </span>
-                <span className="font-medium text-petrol-800">{c.label}</span>
+                <span className="absolute bottom-3 right-3 flex size-9 items-center justify-center rounded-full bg-white/90 text-petrol-700 opacity-0 transition-opacity group-hover:opacity-100">
+                  <ArrowRight className="size-4" aria-hidden />
+                </span>
+                <span className="sr-only">{c.label}</span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Banner editorial do manual de marca */}
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <Link
+          href="/imoveis"
+          aria-label="Explorar imóveis"
+          className="group relative block overflow-hidden rounded-3xl shadow-card"
+        >
+          <span className="relative block aspect-[16/10] sm:aspect-[21/9]">
+            <Image
+              src="/images/banners/hero-litoral.jpg"
+              alt="Investimentos que constroem o seu futuro — R7 Investimentos Imobiliários"
+              fill
+              sizes="100vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+          </span>
+        </Link>
+      </section>
+
       {/* Institucional */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="grid items-start gap-10 lg:grid-cols-2">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-champagne-500">
               A R7
             </p>
-            <h2 className="mt-2 font-serif text-3xl text-petrol-800 sm:text-4xl">
+            <h2 className="mt-2 font-display text-3xl text-petrol-800 sm:text-4xl">
               {settings.about_title}
             </h2>
             {settings.about_text && (
@@ -170,33 +211,43 @@ export default async function HomePage() {
             </ButtonLink>
           </div>
 
-          {settings.differentials.length > 0 && (
-            <ul className="grid gap-4 sm:grid-cols-2">
-              {settings.differentials.map((d) => (
-                <li
-                  key={d.title}
-                  className="rounded-2xl bg-white p-6 shadow-soft"
-                >
-                  <TrendingUp
-                    className="size-6 text-champagne-500"
-                    aria-hidden
-                  />
-                  <h3 className="mt-3 font-medium text-petrol-800">{d.title}</h3>
-                  <p className="mt-1.5 text-sm text-graphite-500">
-                    {d.description}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          )}
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-card">
+            <Image
+              src="/images/institucional/casa-contemporanea.jpg"
+              alt="Residência contemporânea com piscina — composição institucional R7"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
         </div>
+
+        {settings.differentials.length > 0 && (
+          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {settings.differentials.map((d) => (
+              <li
+                key={d.title}
+                className="rounded-2xl bg-white p-6 shadow-soft"
+              >
+                <TrendingUp
+                  className="size-6 text-champagne-500"
+                  aria-hidden
+                />
+                <h3 className="mt-3 font-medium text-petrol-800">{d.title}</h3>
+                <p className="mt-1.5 text-sm text-graphite-500">
+                  {d.description}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
 
       {/* CTA final */}
       <section className="bg-petrol-800">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-16 text-center sm:px-6 lg:px-8">
           <MapPin className="size-8 text-champagne-300" aria-hidden />
-          <h2 className="max-w-2xl font-serif text-3xl text-white sm:text-4xl">
+          <h2 className="max-w-2xl font-display text-3xl text-white sm:text-4xl">
             Quer comprar, vender ou investir em um imóvel?
           </h2>
           <p className="max-w-xl text-petrol-100">

@@ -68,7 +68,7 @@ export function LeadForm({
     return (
       <div className="rounded-2xl bg-petrol-50 p-6 text-center">
         <CheckCircle2 className="mx-auto size-10 text-petrol-500" aria-hidden />
-        <p className="mt-3 font-serif text-lg text-petrol-800">
+        <p className="mt-3 font-display text-lg text-petrol-800">
           Recebemos seu contato!
         </p>
         <p className="mt-1 text-sm text-graphite-500">
@@ -81,7 +81,7 @@ export function LeadForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4">
       {!compact && (
-        <h3 className="font-serif text-lg text-petrol-800">{title}</h3>
+        <h3 className="font-display text-lg text-petrol-800">{title}</h3>
       )}
 
       <Field label="Nome">

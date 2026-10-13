@@ -20,7 +20,7 @@ function Section({
 }) {
   return (
     <section className="rounded-2xl bg-white p-6 shadow-soft">
-      <h2 className="mb-5 font-serif text-lg text-petrol-900">{title}</h2>
+      <h2 className="mb-5 font-display text-lg text-petrol-900">{title}</h2>
       {children}
     </section>
   );
@@ -203,7 +203,7 @@ export function SettingsForm({
       {has("marca") && (
         <Section title="Identidade visual">
           <div className="space-y-6">
-            <Field label="Logomarca" hint="SVG ou PNG com fundo transparente. Tem prioridade sobre /brand/logo.svg">
+            <Field label="Logomarca" hint="Arte oficial da marca. Tem prioridade sobre /brand/r7-logo.jpg">
               <AssetUpload name="logo_path" defaultValue={settings.logo_path} label="Logo" />
             </Field>
             <Field label="Imagem do hero da home" hint="Foto ampla em boa resolução (mín. 1920px)">

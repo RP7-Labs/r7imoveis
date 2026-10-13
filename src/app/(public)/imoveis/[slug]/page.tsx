@@ -179,7 +179,7 @@ export default async function ImovelPage({ params }: Props) {
               {property.featured && <Badge tone="amber">Destaque</Badge>}
             </div>
 
-            <h1 className="mt-3 font-serif text-3xl text-petrol-900 sm:text-4xl">
+            <h1 className="mt-3 font-display text-3xl text-petrol-900 sm:text-4xl">
               {property.title}
             </h1>
             <p className="mt-2 flex items-center gap-1.5 text-graphite-500">
@@ -201,7 +201,7 @@ export default async function ImovelPage({ params }: Props) {
                     <s.icon className="size-4 text-champagne-500" aria-hidden />
                     {s.value === 1 ? s.singular : s.plural}
                   </dt>
-                  <dd className="mt-1 font-serif text-2xl text-petrol-800">
+                  <dd className="mt-1 font-display text-2xl text-petrol-800">
                     {s.value}
                   </dd>
                 </div>
@@ -217,7 +217,7 @@ export default async function ImovelPage({ params }: Props) {
                     <Ruler className="size-4 text-champagne-500" aria-hidden />
                     Área construída
                   </dt>
-                  <dd className="mt-1 font-serif text-2xl text-petrol-800">
+                  <dd className="mt-1 font-display text-2xl text-petrol-800">
                     {formatArea(property.built_area)}
                   </dd>
                 </div>
@@ -228,7 +228,7 @@ export default async function ImovelPage({ params }: Props) {
                     <Ruler className="size-4 text-champagne-500" aria-hidden />
                     Área total
                   </dt>
-                  <dd className="mt-1 font-serif text-2xl text-petrol-800">
+                  <dd className="mt-1 font-display text-2xl text-petrol-800">
                     {formatArea(property.total_area)}
                   </dd>
                 </div>
@@ -244,7 +244,7 @@ export default async function ImovelPage({ params }: Props) {
                     <Building className="size-4 text-champagne-500" aria-hidden />
                     Condomínio
                   </dt>
-                  <dd className="mt-1 font-serif text-2xl text-petrol-800">
+                  <dd className="mt-1 font-display text-2xl text-petrol-800">
                     {formatPrice(property.condo_fee)}/mês
                   </dd>
                 </div>
@@ -254,7 +254,7 @@ export default async function ImovelPage({ params }: Props) {
                   <dt className="text-xs uppercase tracking-wide text-graphite-400">
                     IPTU
                   </dt>
-                  <dd className="mt-1 font-serif text-2xl text-petrol-800">
+                  <dd className="mt-1 font-display text-2xl text-petrol-800">
                     {formatPrice(property.iptu)}
                     {property.iptu_periodicity &&
                       `/${property.iptu_periodicity === "mensal" ? "mês" : "ano"}`}
@@ -266,7 +266,7 @@ export default async function ImovelPage({ params }: Props) {
 
           {property.description && (
             <section className="mt-10">
-              <h2 className="font-serif text-2xl text-petrol-800">Descrição</h2>
+              <h2 className="font-display text-2xl text-petrol-800">Descrição</h2>
               <div className="mt-4 whitespace-pre-line leading-relaxed text-graphite-600">
                 {property.description}
               </div>
@@ -275,7 +275,7 @@ export default async function ImovelPage({ params }: Props) {
 
           {features.length > 0 && (
             <section className="mt-10">
-              <h2 className="font-serif text-2xl text-petrol-800">
+              <h2 className="font-display text-2xl text-petrol-800">
                 Características e comodidades
               </h2>
               <ul className="mt-4 grid gap-2 sm:grid-cols-2">
@@ -294,7 +294,7 @@ export default async function ImovelPage({ params }: Props) {
 
           {mapQuery && (
             <section className="mt-10">
-              <h2 className="font-serif text-2xl text-petrol-800">Localização</h2>
+              <h2 className="font-display text-2xl text-petrol-800">Localização</h2>
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
                 target="_blank"
@@ -322,7 +322,7 @@ export default async function ImovelPage({ params }: Props) {
               <p className="text-xs uppercase tracking-wide text-graphite-400">
                 {purposeLabel(property.purpose)}
               </p>
-              <p className="mt-1 font-serif text-3xl font-semibold text-petrol-700">
+              <p className="mt-1 font-display text-3xl font-semibold text-petrol-700">
                 {formatPrice(property.price, property.currency, property.purpose)}
               </p>
 
@@ -379,7 +379,7 @@ async function RelatedProperties({
 
   return (
     <section className="mt-16 border-t border-sand pt-12">
-      <h2 className="font-serif text-2xl text-petrol-800 sm:text-3xl">
+      <h2 className="font-display text-2xl text-petrol-800 sm:text-3xl">
         Imóveis relacionados
       </h2>
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

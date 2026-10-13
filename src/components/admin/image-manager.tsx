@@ -113,7 +113,7 @@ export function ImageManager({
   return (
     <section className="rounded-2xl bg-white p-6 shadow-soft">
       <div className="mb-5 flex items-center justify-between">
-        <h2 className="font-serif text-lg text-petrol-900">Fotografias</h2>
+        <h2 className="font-display text-lg text-petrol-900">Fotografias</h2>
         <span className="text-xs text-graphite-400">
           JPG, PNG, WebP ou AVIF · até {MAX_IMAGE_SIZE_MB} MB cada
         </span>

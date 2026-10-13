@@ -20,11 +20,11 @@ export default async function AdminLoginPage({
         <div className="mb-8 text-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/brand/logo.svg"
+            src="/brand/r7-logo.jpg"
             alt="R7 Investimentos Imobiliários"
             className="mx-auto h-16 w-auto"
           />
-          <h1 className="mt-4 font-serif text-xl text-white">
+          <h1 className="mt-4 font-display text-xl text-white">
             Área administrativa
           </h1>
           <p className="mt-1 text-sm text-petrol-200">

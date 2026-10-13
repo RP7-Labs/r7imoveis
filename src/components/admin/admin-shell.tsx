@@ -104,7 +104,7 @@ export function AdminShell({
       {/* Sidebar desktop */}
       <aside className="fixed inset-y-0 hidden w-64 flex-col bg-petrol-900 lg:flex">
         <div className="border-b border-petrol-800 px-5 py-5">
-          <Logo variant="light" compact />
+          <Logo size="sm" />
         </div>
         {nav}
         {userBlock}
@@ -112,7 +112,7 @@ export function AdminShell({
 
       {/* Topbar mobile */}
       <div className="fixed inset-x-0 top-0 z-40 flex items-center justify-between border-b border-petrol-800 bg-petrol-900 px-4 py-3 lg:hidden">
-        <Logo variant="light" compact />
+        <Logo size="sm" />
         <button
           type="button"
           onClick={() => setOpen(true)}
@@ -133,7 +133,7 @@ export function AdminShell({
           />
           <aside className="absolute inset-y-0 left-0 flex w-72 flex-col bg-petrol-900">
             <div className="flex items-center justify-between border-b border-petrol-800 px-5 py-4">
-              <Logo variant="light" compact />
+              <Logo size="sm" />
               <button
                 type="button"
                 onClick={() => setOpen(false)}

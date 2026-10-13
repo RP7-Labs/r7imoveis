@@ -26,7 +26,7 @@ export default function ContatoPage() {
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-champagne-500">
           Contato
         </p>
-        <h1 className="mt-2 font-serif text-3xl text-petrol-800 sm:text-4xl">
+        <h1 className="mt-2 font-display text-3xl text-petrol-800 sm:text-4xl">
           Fale com a R7
         </h1>
         <p className="mt-3 max-w-xl text-graphite-500">
@@ -105,7 +105,7 @@ async function ContactInfo() {
 
   return (
     <div className="rounded-2xl bg-petrol-800 p-6 text-petrol-100 shadow-card sm:p-8">
-      <h2 className="font-serif text-xl text-white">Canais de atendimento</h2>
+      <h2 className="font-display text-xl text-white">Canais de atendimento</h2>
       <ul className="mt-6 space-y-5">
         {items.map((item) => (
           <li key={item.label} className="flex items-start gap-4">

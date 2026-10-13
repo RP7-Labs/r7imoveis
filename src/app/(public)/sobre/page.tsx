@@ -1,5 +1,6 @@
 import { ArrowRight, TrendingUp } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Suspense } from "react";
 import { ButtonLink } from "@/components/ui/button";
 import { getSiteSettings } from "@/lib/settings";
@@ -30,10 +31,21 @@ async function AboutContent() {
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-champagne-500">
           Institucional
         </p>
-        <h1 className="mt-2 font-serif text-3xl text-petrol-800 sm:text-4xl">
+        <h1 className="mt-2 font-display text-3xl text-petrol-800 sm:text-4xl">
           {settings.about_title ?? settings.company_name}
         </h1>
       </header>
+
+      <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-3xl shadow-card">
+        <Image
+          src="/images/institucional/interior-vista-mar.jpg"
+          alt="Imóveis para viver, investir e crescer — composição institucional R7"
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 66vw"
+          className="object-cover"
+        />
+      </div>
 
       {settings.about_text && (
         <div className="mt-6 space-y-4 leading-relaxed text-graphite-600">
@@ -45,7 +57,7 @@ async function AboutContent() {
 
       {settings.differentials.length > 0 && (
         <section className="mt-12">
-          <h2 className="font-serif text-2xl text-petrol-800">
+          <h2 className="font-display text-2xl text-petrol-800">
             Nossos diferenciais
           </h2>
           <ul className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -63,7 +75,7 @@ async function AboutContent() {
       )}
 
       <div className="mt-12 rounded-2xl bg-petrol-800 p-8 text-center">
-        <h2 className="font-serif text-2xl text-white">
+        <h2 className="font-display text-2xl text-white">
           Veja os imóveis disponíveis
         </h2>
         <ButtonLink
