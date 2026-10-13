@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* R7 Investimentos Imobiliários — design tokens */
+  --color-petrol-50: #eef4f4;
+  --color-petrol-100: #d7e4e4;
+  --color-petrol-200: #b2c9c9;
+  --color-petrol-300: #83a7a7;
+  --color-petrol-400: #5c8585;
+  --color-petrol-500: #315756;
+  --color-petrol-600: #2b4b4a;
+  --color-petrol-700: #243f3e;
+  --color-petrol-800: #1d3332;
+  --color-petrol-900: #162727;
+  --color-petrol-950: #0d1919;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-champagne-50: #faf7f1;
+  --color-champagne-100: #f3ecdf;
+  --color-champagne-200: #e8dcc4;
+  --color-champagne-300: #d9c5a8;
+  --color-champagne-400: #c9ab84;
+  --color-champagne-500: #b89267;
+  --color-champagne-600: #a17a52;
+  --color-champagne-700: #81613f;
+  --color-champagne-800: #684e35;
+  --color-champagne-900: #55402d;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-offwhite: #f8f6f1;
+  --color-sand: #eae2d6;
+  --color-sand-dark: #d8ccb8;
+
+  --color-graphite-50: #f4f5f5;
+  --color-graphite-100: #e3e5e5;
+  --color-graphite-200: #c6caca;
+  --color-graphite-300: #9fa6a6;
+  --color-graphite-400: #737b7b;
+  --color-graphite-500: #4f5656;
+  --color-graphite-600: #3a4040;
+  --color-graphite-700: #292d2d;
+  --color-graphite-800: #202323;
+  --color-graphite-900: #171a1a;
+
+  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  --shadow-soft: 0 1px 2px rgb(23 26 26 / 0.04), 0 8px 24px rgb(23 26 26 / 0.06);
+  --shadow-card: 0 1px 3px rgb(23 26 26 / 0.06), 0 12px 32px -8px rgb(23 26 26 / 0.12);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-offwhite);
+  color: var(--color-graphite-700);
+}
+
+::selection {
+  background: var(--color-champagne-300);
+  color: var(--color-petrol-900);
 }
