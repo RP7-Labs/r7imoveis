@@ -33,6 +33,11 @@ import { storageUrl } from "@/lib/storage";
 import { buildWhatsAppUrl, propertyWhatsAppMessage } from "@/lib/whatsapp";
 import type { PropertyWithImages } from "@/lib/types";
 
+// Detalhe do imóvel renderizado sob demanda: garante status 404 real para
+// imóveis despublicados/inexistentes. Os dados permanecem cacheados via
+// 'use cache' na camada de dados.
+export const instant = false;
+
 type Props = PageProps<"/imoveis/[slug]">;
 
 async function loadProperty(slug: string) {
@@ -75,20 +80,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ImovelPage({ params }: Props) {
-  return (
-    <Suspense
-      fallback={
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <div className="aspect-[16/10] animate-pulse rounded-2xl bg-sand" />
-        </div>
-      }
-    >
-      <ImovelContent params={params} />
-    </Suspense>
-  );
-}
-
-async function ImovelContent({ params }: { params: Props["params"] }) {
   const { slug } = await params;
   const [property, settings] = await Promise.all([
     loadProperty(slug),
