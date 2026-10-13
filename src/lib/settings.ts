@@ -8,7 +8,7 @@ const FALLBACK: SiteSettings = {
   tagline: "Imóveis selecionados em Santa Catarina",
   hero_title: "Imóveis que valorizam seu patrimônio",
   hero_subtitle:
-    "Curadoria de imóveis para compra, venda e investimento em Santa Catarina.",
+    "Curadoria de imóveis para compra, venda e investimento em Balneário Camboriú e Praia Brava.",
   hero_image_path: null,
   about_title: "R7 Investimentos Imobiliários",
   about_text: null,
@@ -17,7 +17,7 @@ const FALLBACK: SiteSettings = {
   whatsapp_number: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? null,
   whatsapp_message: null,
   email: null,
-  address: null,
+  address: "Rua 3100, 780 — Centro, Balneário Camboriú/SC, 88330-304",
   business_hours: null,
   instagram_url: "https://www.instagram.com/r7imoveissc/",
   facebook_url: null,

@@ -97,9 +97,8 @@ admin.
   `55DDDNUMERO`) com fallback na env `NEXT_PUBLIC_WHATSAPP_NUMBER`.
 - Os links usam `https://wa.me/NUMERO?text=MENSAGEM` — o usuário sempre
   confirma o envio no próprio WhatsApp.
-- Instagram configurável em **Configurações → Redes sociais**. A migração do
-  perfil `@r7imoveisbalneariocamboriu` → `@r7imoveissc` deve ser feita no
-  próprio Instagram; o site aponta para a URL cadastrada.
+- Instagram `@r7imoveissc` confirmado e já é a URL padrão do site
+  (migration + fallback), configurável em **Configurações → Redes sociais**.
 
 ## Identidade visual
 
@@ -124,5 +123,4 @@ Aplicada a partir do kit oficial `R7_Kit_Visual_v2` (Manual de Marca R7):
 - [ ] Foto do hero da home (mín. 1920px)
 - [ ] Imagem Open Graph (1200×630)
 - [ ] Revisão dos textos institucionais (conteúdo neutro/placeholder hoje)
-- [ ] Confirmar handle `@r7imoveissc` no Instagram e atualizar a URL
 - [ ] CRECI / razão social para o rodapé, se desejado

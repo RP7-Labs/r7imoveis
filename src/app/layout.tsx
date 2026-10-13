@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | R7 Investimentos Imobiliários",
   },
   description:
-    "Imóveis selecionados para compra, venda e investimento em Santa Catarina. R7 Investimentos Imobiliários.",
+    "Imóveis selecionados para compra, venda e investimento em Balneário Camboriú e Praia Brava. R7 Investimentos Imobiliários.",
   openGraph: {
     siteName: "R7 Investimentos Imobiliários",
     locale: "pt_BR",
