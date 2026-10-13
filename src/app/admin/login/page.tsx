@@ -20,9 +20,9 @@ export default async function AdminLoginPage({
         <div className="mb-8 text-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/brand/r7-logo.jpg"
+            src="/brand/r7-lockup-champagne.png"
             alt="R7 Investimentos Imobiliários"
-            className="mx-auto h-16 w-auto"
+            className="mx-auto h-28 w-auto"
           />
           <h1 className="mt-4 font-display text-xl text-white">
             Área administrativa

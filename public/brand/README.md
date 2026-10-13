@@ -6,9 +6,18 @@ Arquivos oficiais extraídos do kit `R7_Kit_Visual_v2` (Manual de Marca R7).
 
 | Arquivo | Uso |
 |---|---|
-| `r7-logo.jpg` (800×800) | Lockup oficial — header, footer, admin |
-| `r7-logo-1200.jpg` (1200×1200) | Versão maior para usos futuros |
+| `r7-logo.jpg` (800×800) | Lockup oficial (fundo verde) — referência |
+| `r7-logo-1200.jpg` (1200×1200) | Versão maior — fonte dos recortes abaixo |
 | `r7-logo-fonte-original.jpg` (640×640) | Arte de origem (backup) |
+
+## Recortes com transparência (gerados em `scripts/make-brand-assets.mjs`)
+
+| Arquivo | Uso |
+|---|---|
+| `r7-mono-petrol.png` | Selo monograma verde — header e fundos claros |
+| `r7-mono-champagne.png` | Selo monograma champagne — admin, blocos escuros |
+| `r7-lockup-petrol.png` | Lockup completo (mono+texto+ícone) em verde |
+| `r7-lockup-champagne.png` | Lockup completo champagne — footer, login |
 
 ## Favicons
 

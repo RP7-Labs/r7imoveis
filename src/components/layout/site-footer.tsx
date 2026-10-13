@@ -44,6 +44,9 @@ export function SiteFooter({
         <div>
           <Logo
             src={storageUrl(settings.logo_path, STORAGE_BUCKETS.siteAssets)}
+            tone="champagne"
+            variant="lockup"
+            withName={false}
             size="lg"
           />
           {settings.tagline && (
