@@ -3,12 +3,12 @@ import {
   ArrowUpRight,
   MapPin,
   MessageCircle,
-  TrendingUp,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { PropertyCard } from "@/components/properties/property-card";
+import { differentialIcon } from "@/components/site/differential-icon";
 import { HomeSearch } from "@/components/site/home-search";
 import { ButtonLink, buttonClasses } from "@/components/ui/button";
 import { STORAGE_BUCKETS } from "@/lib/constants";
@@ -266,20 +266,23 @@ export default async function HomePage() {
 
         {settings.differentials.length > 0 && (
           <ul className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {settings.differentials.map((d) => (
+            {settings.differentials.map((d) => {
+              const Icon = differentialIcon(d.title);
+              return (
               <li
                 key={d.title}
                 className="rounded-3xl bg-white p-7 shadow-soft"
               >
                 <span className="flex size-12 items-center justify-center rounded-full border border-champagne-400 text-champagne-600">
-                  <TrendingUp className="size-5" aria-hidden />
+                  <Icon className="size-5" aria-hidden />
                 </span>
                 <h3 className="mt-4 font-medium text-petrol-800">{d.title}</h3>
                 <p className="mt-1.5 text-sm text-graphite-500">
                   {d.description}
                 </p>
               </li>
-            ))}
+              );
+            })}
           </ul>
         )}
       </section>

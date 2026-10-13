@@ -1,7 +1,8 @@
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Suspense } from "react";
+import { differentialIcon } from "@/components/site/differential-icon";
 import { ButtonLink } from "@/components/ui/button";
 import { getSiteSettings } from "@/lib/settings";
 
@@ -75,17 +76,20 @@ async function AboutContent() {
             Nossos diferenciais
           </h2>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {settings.differentials.map((d) => (
+            {settings.differentials.map((d) => {
+              const Icon = differentialIcon(d.title);
+              return (
               <li key={d.title} className="rounded-3xl bg-white p-7 shadow-soft">
                 <span className="flex size-12 items-center justify-center rounded-full border border-champagne-400 text-champagne-600">
-                  <TrendingUp className="size-5" aria-hidden />
+                  <Icon className="size-5" aria-hidden />
                 </span>
                 <h3 className="mt-4 font-medium text-petrol-800">{d.title}</h3>
                 <p className="mt-1.5 text-sm text-graphite-500">
                   {d.description}
                 </p>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </section>
       )}
