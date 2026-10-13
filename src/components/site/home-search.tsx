@@ -27,7 +27,7 @@ export function HomeSearch({ cities }: { cities: string[] }) {
   return (
     <form
       onSubmit={submit}
-      className="rounded-2xl bg-white/95 p-4 shadow-card backdrop-blur sm:p-5"
+      className="rounded-[1.75rem] bg-white/95 p-5 shadow-card backdrop-blur sm:p-6"
     >
       <div
         role="tablist"

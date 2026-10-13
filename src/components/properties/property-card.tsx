@@ -63,7 +63,7 @@ export function PropertyCard({
   ].filter(Boolean) as { icon: typeof BedDouble; value: string; label: string }[];
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-soft transition-shadow hover:shadow-card">
+    <article className="group relative flex flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-soft transition-shadow hover:shadow-card">
       <Link
         href={href}
         className="absolute inset-0 z-10"

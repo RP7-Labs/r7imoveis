@@ -257,6 +257,7 @@ create trigger site_settings_set_updated_at
 insert into public.site_settings (
   id, company_name, tagline, hero_title, hero_subtitle,
   about_title, about_text, footer_text, instagram_url, address,
+  phone, whatsapp_number, email,
   seo_title, seo_description
 ) values (
   1,
@@ -269,6 +270,9 @@ insert into public.site_settings (
   'R7 Investimentos Imobiliários — imóveis em Santa Catarina.',
   'https://www.instagram.com/r7imoveissc/',
   'Rua 3100, 780 — Centro, Balneário Camboriú/SC, 88330-304',
+  '(47) 99634-6864',
+  '5547996346864',
+  'daianyrezende7@gmail.com',
   'R7 Investimentos Imobiliários | Imóveis em Balneário Camboriú',
   'Compre, venda e invista em imóveis em Balneário Camboriú e Praia Brava com a R7 Investimentos Imobiliários.'
 )

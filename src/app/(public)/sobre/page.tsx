@@ -28,15 +28,16 @@ async function AboutContent() {
   return (
     <>
       <header>
-        <p className="text-sm font-medium uppercase tracking-[0.18em] text-champagne-500">
-          Institucional
-        </p>
-        <h1 className="mt-2 font-display text-3xl text-petrol-800 sm:text-4xl">
+        <div className="flex items-center gap-3">
+          <span className="h-px w-8 bg-champagne-500" aria-hidden />
+          <p className="eyebrow text-champagne-600">Institucional</p>
+        </div>
+        <h1 className="mt-4 font-display text-3xl font-light tracking-tight text-petrol-800 sm:text-4xl">
           {settings.about_title ?? settings.company_name}
         </h1>
       </header>
 
-      <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-3xl shadow-card">
+      <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-card">
         <Image
           src="/images/institucional/interior-vista-mar.jpg"
           alt="Imóveis para viver, investir e crescer — composição institucional R7"
@@ -47,8 +48,17 @@ async function AboutContent() {
         />
       </div>
 
+      {/* Propósito — do Manual de Marca */}
+      <blockquote className="mt-12 border-l-2 border-champagne-400 pl-6">
+        <p className="eyebrow text-champagne-600">Propósito</p>
+        <p className="mt-3 max-w-2xl font-display text-2xl font-light leading-snug text-petrol-800">
+          Conectar o imóvel ideal para cada cliente, com atendimento
+          personalizado.
+        </p>
+      </blockquote>
+
       {settings.about_text && (
-        <div className="mt-6 space-y-4 leading-relaxed text-graphite-600">
+        <div className="mt-10 space-y-4 leading-relaxed text-graphite-600">
           {settings.about_text.split(/\n{2,}/).map((p) => (
             <p key={p.slice(0, 40)}>{p}</p>
           ))}
@@ -56,15 +66,21 @@ async function AboutContent() {
       )}
 
       {settings.differentials.length > 0 && (
-        <section className="mt-12">
-          <h2 className="font-display text-2xl text-petrol-800">
+        <section className="mt-14">
+          <div className="flex items-center gap-3">
+            <span className="h-px w-8 bg-champagne-500" aria-hidden />
+            <p className="eyebrow text-champagne-600">Diferenciais</p>
+          </div>
+          <h2 className="mt-4 font-display text-2xl font-light tracking-tight text-petrol-800">
             Nossos diferenciais
           </h2>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2">
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {settings.differentials.map((d) => (
-              <li key={d.title} className="rounded-2xl bg-white p-6 shadow-soft">
-                <TrendingUp className="size-6 text-champagne-500" aria-hidden />
-                <h3 className="mt-3 font-medium text-petrol-800">{d.title}</h3>
+              <li key={d.title} className="rounded-3xl bg-white p-7 shadow-soft">
+                <span className="flex size-12 items-center justify-center rounded-full border border-champagne-400 text-champagne-600">
+                  <TrendingUp className="size-5" aria-hidden />
+                </span>
+                <h3 className="mt-4 font-medium text-petrol-800">{d.title}</h3>
                 <p className="mt-1.5 text-sm text-graphite-500">
                   {d.description}
                 </p>
@@ -74,15 +90,20 @@ async function AboutContent() {
         </section>
       )}
 
-      <div className="mt-12 rounded-2xl bg-petrol-800 p-8 text-center">
-        <h2 className="font-display text-2xl text-white">
+      <div className="relative mt-14 overflow-hidden rounded-[2rem] bg-petrol-800 p-10 text-center">
+        <div
+          aria-hidden
+          className="arch-outline pointer-events-none absolute -right-12 -top-20 h-64 w-44 opacity-60"
+        />
+        <p className="eyebrow text-champagne-300">Catálogo</p>
+        <h2 className="mt-3 font-display text-2xl font-light text-white">
           Veja os imóveis disponíveis
         </h2>
         <ButtonLink
           href="/imoveis"
           variant="champagne"
           size="lg"
-          className="mt-5"
+          className="mt-6"
         >
           Explorar catálogo
           <ArrowRight className="size-5" aria-hidden />

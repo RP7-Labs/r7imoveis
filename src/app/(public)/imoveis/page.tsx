@@ -45,10 +45,11 @@ export default async function ImoveisPage({
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
       <header className="mb-8">
-        <p className="text-sm font-medium uppercase tracking-[0.18em] text-champagne-500">
-          Catálogo
-        </p>
-        <h1 className="mt-2 font-display text-3xl text-petrol-800 sm:text-4xl">
+        <div className="flex items-center gap-3">
+          <span className="h-px w-8 bg-champagne-500" aria-hidden />
+          <p className="eyebrow text-champagne-600">Catálogo</p>
+        </div>
+        <h1 className="mt-4 font-display text-3xl font-light tracking-tight text-petrol-800 sm:text-4xl">
           Imóveis
         </h1>
       </header>

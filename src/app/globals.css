@@ -58,3 +58,25 @@ body {
   background: var(--color-champagne-300);
   color: var(--color-petrol-900);
 }
+
+/* ── Linguagem visual do Manual de Marca R7 ───────────────────────────── */
+
+/* Micro-label em caixa alta com tracking largo (usado em todo o manual) */
+.eyebrow {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+/* Forma de arco — assinatura arquitetônica da marca (p. 6 do manual).
+   Aplicar em containers mais altos que largos para obter o topo semicircular. */
+.rounded-arch {
+  border-radius: 9999px 9999px 1.5rem 1.5rem;
+}
+
+/* Contorno de arco decorativo (linhas finas champagne, como no manual) */
+.arch-outline {
+  border: 1px solid rgb(201 189 171 / 0.3);
+  border-radius: 9999px 9999px 0 0;
+}

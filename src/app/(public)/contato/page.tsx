@@ -23,10 +23,11 @@ export default function ContatoPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <header className="mb-10">
-        <p className="text-sm font-medium uppercase tracking-[0.18em] text-champagne-500">
-          Contato
-        </p>
-        <h1 className="mt-2 font-display text-3xl text-petrol-800 sm:text-4xl">
+        <div className="flex items-center gap-3">
+          <span className="h-px w-8 bg-champagne-500" aria-hidden />
+          <p className="eyebrow text-champagne-600">Contato</p>
+        </div>
+        <h1 className="mt-4 font-display text-3xl font-light tracking-tight text-petrol-800 sm:text-4xl">
           Fale com a R7
         </h1>
         <p className="mt-3 max-w-xl text-graphite-500">
@@ -37,7 +38,7 @@ export default function ContatoPage() {
 
       <div className="grid gap-10 lg:grid-cols-5">
         <div className="lg:col-span-3">
-          <div className="rounded-2xl bg-white p-6 shadow-soft sm:p-8">
+          <div className="rounded-3xl bg-white p-6 shadow-soft sm:p-8">
             <LeadForm source="contact" title="Envie sua mensagem" />
           </div>
         </div>
@@ -104,12 +105,13 @@ async function ContactInfo() {
   }[];
 
   return (
-    <div className="rounded-2xl bg-petrol-800 p-6 text-petrol-100 shadow-card sm:p-8">
-      <h2 className="font-display text-xl text-white">Canais de atendimento</h2>
+    <div className="rounded-3xl bg-petrol-800 p-6 text-petrol-100 shadow-card sm:p-8">
+      <p className="eyebrow text-champagne-300">Atendimento</p>
+      <h2 className="mt-3 font-display text-xl font-light text-white">Canais de atendimento</h2>
       <ul className="mt-6 space-y-5">
         {items.map((item) => (
           <li key={item.label} className="flex items-start gap-4">
-            <span className="rounded-xl bg-petrol-700 p-2.5 text-champagne-300">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-champagne-300/50 text-champagne-300">
               <item.icon className="size-5" aria-hidden />
             </span>
             <span>

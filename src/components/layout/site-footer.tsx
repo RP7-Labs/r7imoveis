@@ -34,6 +34,12 @@ export function SiteFooter({
 
   return (
     <footer className="bg-petrol-900 text-petrol-100">
+      {/* Linha de marca espaçada — como no manual (p. 8) */}
+      <div className="border-b border-petrol-800">
+        <p className="mx-auto max-w-7xl px-4 py-7 text-center text-[11px] font-semibold uppercase tracking-[0.55em] text-petrol-400 sm:px-6 lg:px-8">
+          R 7 · Investimentos Imobiliários
+        </p>
+      </div>
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
           <Logo

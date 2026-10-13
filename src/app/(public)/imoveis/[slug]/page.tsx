@@ -179,7 +179,7 @@ export default async function ImovelPage({ params }: Props) {
               {property.featured && <Badge tone="amber">Destaque</Badge>}
             </div>
 
-            <h1 className="mt-3 font-display text-3xl text-petrol-900 sm:text-4xl">
+            <h1 className="mt-3 font-display text-3xl font-light tracking-tight text-petrol-900 sm:text-4xl">
               {property.title}
             </h1>
             <p className="mt-2 flex items-center gap-1.5 text-graphite-500">
@@ -188,13 +188,13 @@ export default async function ImovelPage({ params }: Props) {
               {property.address_visibility === "approximate" &&
                 " (localização aproximada)"}
             </p>
-            <p className="mt-1 text-xs uppercase tracking-wide text-graphite-400">
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-graphite-400">
               Ref. {property.reference_code}
             </p>
           </div>
 
           {specs.length > 0 && (
-            <dl className="mt-8 grid grid-cols-2 gap-4 rounded-2xl bg-white p-6 shadow-soft sm:grid-cols-3 lg:grid-cols-5">
+            <dl className="mt-8 grid grid-cols-2 gap-4 rounded-3xl bg-white p-6 shadow-soft sm:grid-cols-3 lg:grid-cols-5">
               {specs.map((s) => (
                 <div key={s.singular}>
                   <dt className="flex items-center gap-1.5 text-xs uppercase tracking-wide text-graphite-400">
@@ -210,7 +210,7 @@ export default async function ImovelPage({ params }: Props) {
           )}
 
           {(property.built_area != null || property.total_area != null) && (
-            <dl className="mt-4 grid grid-cols-2 gap-4 rounded-2xl bg-white p-6 shadow-soft">
+            <dl className="mt-4 grid grid-cols-2 gap-4 rounded-3xl bg-white p-6 shadow-soft">
               {property.built_area != null && (
                 <div>
                   <dt className="flex items-center gap-1.5 text-xs uppercase tracking-wide text-graphite-400">
@@ -237,7 +237,7 @@ export default async function ImovelPage({ params }: Props) {
           )}
 
           {(property.condo_fee != null || property.iptu != null) && (
-            <dl className="mt-4 grid grid-cols-2 gap-4 rounded-2xl bg-white p-6 shadow-soft">
+            <dl className="mt-4 grid grid-cols-2 gap-4 rounded-3xl bg-white p-6 shadow-soft">
               {property.condo_fee != null && (
                 <div>
                   <dt className="flex items-center gap-1.5 text-xs uppercase tracking-wide text-graphite-400">
@@ -266,7 +266,7 @@ export default async function ImovelPage({ params }: Props) {
 
           {property.description && (
             <section className="mt-10">
-              <h2 className="font-display text-2xl text-petrol-800">Descrição</h2>
+              <h2 className="font-display text-2xl font-light tracking-tight text-petrol-800">Descrição</h2>
               <div className="mt-4 whitespace-pre-line leading-relaxed text-graphite-600">
                 {property.description}
               </div>
@@ -275,7 +275,7 @@ export default async function ImovelPage({ params }: Props) {
 
           {features.length > 0 && (
             <section className="mt-10">
-              <h2 className="font-display text-2xl text-petrol-800">
+              <h2 className="font-display text-2xl font-light tracking-tight text-petrol-800">
                 Características e comodidades
               </h2>
               <ul className="mt-4 grid gap-2 sm:grid-cols-2">
@@ -294,12 +294,12 @@ export default async function ImovelPage({ params }: Props) {
 
           {mapQuery && (
             <section className="mt-10">
-              <h2 className="font-display text-2xl text-petrol-800">Localização</h2>
+              <h2 className="font-display text-2xl font-light tracking-tight text-petrol-800">Localização</h2>
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 flex items-center gap-3 rounded-2xl border border-sand bg-white p-5 text-petrol-700 shadow-soft transition-colors hover:border-champagne-400"
+                className="mt-4 flex items-center gap-3 rounded-3xl border border-sand bg-white p-5 text-petrol-700 shadow-soft transition-colors hover:border-champagne-400"
               >
                 <MapPin className="size-6 text-champagne-500" aria-hidden />
                 <span>
@@ -318,7 +318,7 @@ export default async function ImovelPage({ params }: Props) {
         {/* Coluna lateral — preço e contato */}
         <aside className="lg:col-span-1">
           <div className="sticky top-24 space-y-5">
-            <div className="rounded-2xl bg-white p-6 shadow-card">
+            <div className="rounded-3xl bg-white p-6 shadow-card">
               <p className="text-xs uppercase tracking-wide text-graphite-400">
                 {purposeLabel(property.purpose)}
               </p>
@@ -350,7 +350,7 @@ export default async function ImovelPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="rounded-2xl bg-white p-6 shadow-soft">
+            <div className="rounded-3xl bg-white p-6 shadow-soft">
               <LeadForm
                 propertyId={property.id}
                 propertyTitle={property.title}
@@ -379,7 +379,11 @@ async function RelatedProperties({
 
   return (
     <section className="mt-16 border-t border-sand pt-12">
-      <h2 className="font-display text-2xl text-petrol-800 sm:text-3xl">
+      <div className="flex items-center gap-3">
+        <span className="h-px w-8 bg-champagne-500" aria-hidden />
+        <p className="eyebrow text-champagne-600">Continue explorando</p>
+      </div>
+      <h2 className="mt-4 font-display text-2xl font-light tracking-tight text-petrol-800 sm:text-3xl">
         Imóveis relacionados
       </h2>
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

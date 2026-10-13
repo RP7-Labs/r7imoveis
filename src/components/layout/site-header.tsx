@@ -50,7 +50,7 @@ export function SiteHeader({
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm font-medium text-graphite-600 transition-colors hover:text-petrol-600"
+                  className="text-[13px] font-semibold uppercase tracking-[0.14em] text-graphite-600 transition-colors hover:text-petrol-600"
                 >
                   {item.label}
                 </Link>
