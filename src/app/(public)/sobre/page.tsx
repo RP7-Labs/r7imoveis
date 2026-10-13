@@ -39,7 +39,7 @@ async function AboutContent() {
 
       <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-card">
         <Image
-          src="/images/institucional/interior-vista-mar.jpg"
+          src="/images/institucional/interior-moderno.jpg"
           alt="Imóveis para viver, investir e crescer — composição institucional R7"
           fill
           priority

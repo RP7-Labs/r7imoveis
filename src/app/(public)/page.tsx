@@ -28,7 +28,7 @@ export default async function HomePage() {
   );
   const heroImage =
     storageUrl(settings.hero_image_path, STORAGE_BUCKETS.siteAssets) ??
-    "/images/hero/r7-hero-skyline.jpg";
+    "/images/hero/hero-aerial.jpg";
 
   return (
     <>
@@ -147,22 +147,22 @@ export default async function HomePage() {
               {
                 label: "Apartamentos",
                 href: "/imoveis?property_type=apartamento",
-                img: "/images/categorias/apartamentos.jpg",
+                img: "/images/categorias/cat-apartamentos.jpg",
               },
               {
                 label: "Casas",
                 href: "/imoveis?property_type=casa",
-                img: "/images/categorias/casas.jpg",
+                img: "/images/categorias/cat-casas.jpg",
               },
               {
                 label: "Comerciais",
                 href: "/imoveis?property_type=comercial",
-                img: "/images/categorias/comerciais.jpg",
+                img: "/images/categorias/cat-comerciais.jpg",
               },
               {
                 label: "Terrenos",
                 href: "/imoveis?property_type=terreno",
-                img: "/images/categorias/terrenos.jpg",
+                img: "/images/categorias/cat-terrenos.jpg",
               },
             ].map((c) => (
               <Link
@@ -204,7 +204,7 @@ export default async function HomePage() {
         >
           <span className="relative block aspect-[16/10] sm:aspect-[21/9]">
             <Image
-              src="/images/banners/hero-litoral.jpg"
+              src="/images/banners/banner-skyline.jpg"
               alt="Skyline do litoral de Santa Catarina ao entardecer"
               fill
               sizes="100vw"
@@ -254,7 +254,7 @@ export default async function HomePage() {
             />
             <div className="rounded-arch relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/images/institucional/casa-contemporanea.jpg"
+                src="/images/institucional/residencia-entardecer.jpg"
                 alt="Residência contemporânea — composição institucional R7"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"

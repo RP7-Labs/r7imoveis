@@ -256,7 +256,7 @@ create trigger site_settings_set_updated_at
 -- Conteúdo institucional neutro — revisar pelo backoffice.
 insert into public.site_settings (
   id, company_name, tagline, hero_title, hero_subtitle,
-  about_title, about_text, footer_text, instagram_url, address,
+  about_title, about_text, differentials, footer_text, instagram_url, address,
   phone, whatsapp_number, email,
   seo_title, seo_description
 ) values (
@@ -267,6 +267,12 @@ insert into public.site_settings (
   'Curadoria de imóveis para compra, venda e investimento em Balneário Camboriú e Praia Brava.',
   'R7 Investimentos Imobiliários',
   'A R7 Investimentos Imobiliários atua na intermediação de imóveis em Balneário Camboriú e Praia Brava, com foco em atendimento próximo, transparência e seleção criteriosa de oportunidades para quem deseja comprar, vender ou investir.',
+  '[
+    {"title": "Atendimento personalizado", "description": "Conexão direta com a equipe R7, do primeiro contato à entrega das chaves."},
+    {"title": "Curadoria de imóveis", "description": "Seleção criteriosa de oportunidades em Balneário Camboriú e Praia Brava."},
+    {"title": "Conhecimento local", "description": "Atuação focada no mercado imobiliário do litoral catarinense."},
+    {"title": "Transparência", "description": "Informações claras em todas as etapas da negociação."}
+  ]'::jsonb,
   'R7 Investimentos Imobiliários — imóveis em Santa Catarina.',
   'https://www.instagram.com/r7imoveissc/',
   'Rua 3100, 780 — Centro, Balneário Camboriú/SC, 88330-304',

@@ -111,9 +111,11 @@ Aplicada a partir do kit oficial `R7_Kit_Visual_v2` (Manual de Marca R7):
 - **Logo**: lockup raster em `public/brand/` (ver `public/brand/README.md`).
 - **Favicons**: `src/app/favicon.ico`, `icon.png`, `apple-icon.png` +
   conjunto completo em `public/icons/`.
-- **Imagens ilustrativas** (recortes do manual): `public/images/` — usadas
-  apenas em hero, categorias, banner e institucional. **Nunca** como foto de
-  imóvel real; as fotos dos imóveis vêm do Supabase Storage.
+- **Imagens ilustrativas** (fotos editoriais Unsplash, alta resolução):
+  `public/images/` — usadas apenas em hero, categorias, banner e
+  institucional. **Nunca** como foto de imóvel real; as fotos dos imóveis
+  vêm do Supabase Storage. Nomes de arquivo mudam ao trocar imagens para
+  evitar cache stale.
 - Fonte vetorial da logo não foi fornecida (apenas raster) — solicitar ao
   designer se necessário.
 

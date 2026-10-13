@@ -11,8 +11,30 @@ const FALLBACK: SiteSettings = {
     "Curadoria de imóveis para compra, venda e investimento em Balneário Camboriú e Praia Brava.",
   hero_image_path: null,
   about_title: "R7 Investimentos Imobiliários",
-  about_text: null,
-  differentials: [],
+  about_text:
+    "A R7 Investimentos Imobiliários atua na intermediação de imóveis em Balneário Camboriú e Praia Brava, com foco em atendimento próximo, transparência e seleção criteriosa de oportunidades para quem deseja comprar, vender ou investir.",
+  differentials: [
+    {
+      title: "Atendimento personalizado",
+      description:
+        "Conexão direta com a equipe R7, do primeiro contato à entrega das chaves.",
+    },
+    {
+      title: "Curadoria de imóveis",
+      description:
+        "Seleção criteriosa de oportunidades em Balneário Camboriú e Praia Brava.",
+    },
+    {
+      title: "Conhecimento local",
+      description:
+        "Atuação focada no mercado imobiliário do litoral catarinense.",
+    },
+    {
+      title: "Transparência",
+      description:
+        "Informações claras em todas as etapas da negociação.",
+    },
+  ],
   phone: "(47) 99634-6864",
   whatsapp_number:
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5547996346864",
