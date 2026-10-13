@@ -138,6 +138,17 @@ export function SiteFooter({
           </p>
           {settings.footer_text && <p>{settings.footer_text}</p>}
         </div>
+        <p className="mx-auto mt-3 max-w-7xl px-4 pb-4 text-center text-[11px] text-petrol-400 sm:px-6 sm:text-right lg:px-8">
+          Desenvolvido por{" "}
+          <a
+            href="https://rp7.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-petrol-200 underline-offset-2 hover:text-champagne-300 hover:underline"
+          >
+            rp7.tech
+          </a>
+        </p>
       </div>
     </footer>
   );
