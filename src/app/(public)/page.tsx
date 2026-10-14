@@ -252,7 +252,7 @@ export default async function HomePage() {
             </h2>
             {settings.about_text && (
               <p className="mt-6 leading-relaxed text-graphite-600">
-                {settings.about_text}
+                {settings.about_text.split(/\n{2,}/)[0]}
               </p>
             )}
             <ButtonLink href="/sobre" variant="outline" className="mt-8">
