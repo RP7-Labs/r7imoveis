@@ -26,65 +26,79 @@ export default async function HomePage() {
     settings.whatsapp_number,
     settings.whatsapp_message ?? undefined,
   );
-  const heroImage =
+  const heroPoster =
     storageUrl(settings.hero_image_path, STORAGE_BUCKETS.siteAssets) ??
-    "/images/hero/hero-aerial.jpg";
+    "/images/hero/r7-hero-poster.jpg";
 
   return (
     <>
-      {/* Hero — editorial, com arcos decorativos do manual de marca */}
+      {/* Hero — vídeo drone de BC + Joel & Daiany recortados, linguagem do manual */}
       <section className="relative overflow-hidden bg-petrol-900">
-        <Image
-          src={heroImage}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-petrol-950/80 via-petrol-900/60 to-petrol-950/90" />
+        <video
+          aria-hidden
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={heroPoster}
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        >
+          <source
+            src="/video/hero-bc-mobile.mp4"
+            type="video/mp4"
+            media="(max-width: 767px)"
+          />
+          <source src="/video/hero-bc-desktop.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-petrol-950/85 via-petrol-900/55 to-petrol-950/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-petrol-950/40 via-transparent to-petrol-950/80" />
 
-        {/* Arcos champagne — assinatura visual do manual (p. 6) */}
+        {/* Joel & Daiany — recorte sobre o vídeo, como no rascunho da Daiany */}
         <div
           aria-hidden
-          className="arch-outline pointer-events-none absolute -right-16 top-16 hidden h-[560px] w-80 lg:block"
-        />
-        <div
-          aria-hidden
-          className="arch-outline pointer-events-none absolute -right-40 top-40 hidden h-[560px] w-80 opacity-60 lg:block"
-        />
+          className="pointer-events-none absolute bottom-0 right-0 aspect-[682/1024] h-[44%] sm:h-[58%] lg:h-[80%]"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/equipe/joel-daiany.png"
+            alt=""
+            className="h-full w-full object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]"
+          />
+        </div>
 
         <div className="relative mx-auto flex min-h-[92svh] max-w-7xl flex-col justify-center px-4 pb-40 pt-28 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4">
-            <span className="h-px w-10 bg-champagne-400" aria-hidden />
-            <p className="eyebrow text-champagne-300">
-              R7 Investimentos Imobiliários
-            </p>
-          </div>
-          <h1 className="mt-7 max-w-3xl font-display text-5xl font-light leading-[1.04] tracking-tight text-white sm:text-6xl lg:text-7xl">
-            {settings.hero_title}
-          </h1>
-          {settings.hero_subtitle && (
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-petrol-100">
-              {settings.hero_subtitle}
-            </p>
-          )}
-          <div className="mt-10 flex flex-wrap gap-3">
-            <ButtonLink href="/imoveis" variant="champagne" size="lg">
-              Explorar imóveis
-              <ArrowRight className="size-5" aria-hidden />
-            </ButtonLink>
-            {whatsappUrl && (
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={buttonClasses("whatsapp", "lg")}
-              >
-                <MessageCircle className="size-5" aria-hidden />
-                Falar no WhatsApp
-              </a>
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-4">
+              <span className="h-px w-10 bg-champagne-400" aria-hidden />
+              <p className="eyebrow text-champagne-300">
+                R7 Investimentos Imobiliários
+              </p>
+            </div>
+            <h1 className="mt-7 font-display text-4xl font-light leading-[1.06] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              {settings.hero_title}
+            </h1>
+            {settings.hero_subtitle && (
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-petrol-100">
+                {settings.hero_subtitle}
+              </p>
             )}
+            <div className="mt-10 flex flex-wrap gap-3">
+              <ButtonLink href="/imoveis" variant="champagne" size="lg">
+                Explorar imóveis
+                <ArrowRight className="size-5" aria-hidden />
+              </ButtonLink>
+              {whatsappUrl && (
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={buttonClasses("whatsapp", "lg")}
+                >
+                  <MessageCircle className="size-5" aria-hidden />
+                  Falar no WhatsApp
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </section>

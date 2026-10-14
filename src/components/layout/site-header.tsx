@@ -34,14 +34,14 @@ export function SiteHeader({
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-sand bg-offwhite/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-champagne-400/20 bg-petrol-900/95 backdrop-blur">
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
           aria-label="R7 Investimentos Imobiliários — início"
           className="shrink-0"
         >
-          <Logo src={logoSrc} />
+          <Logo src={logoSrc} tone="champagne" />
         </Link>
 
         <nav aria-label="Navegação principal" className="hidden lg:block">
@@ -50,7 +50,7 @@ export function SiteHeader({
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-[13px] font-semibold uppercase tracking-[0.14em] text-graphite-600 transition-colors hover:text-petrol-600"
+                  className="text-[13px] font-semibold uppercase tracking-[0.14em] text-petrol-100 transition-colors hover:text-champagne-300"
                 >
                   {item.label}
                 </Link>
@@ -66,7 +66,7 @@ export function SiteHeader({
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram da R7"
-              className="hidden rounded-full p-2 text-graphite-500 transition-colors hover:bg-petrol-50 hover:text-petrol-600 sm:inline-flex"
+              className="hidden rounded-full p-2 text-champagne-300/80 transition-colors hover:bg-white/10 hover:text-champagne-300 sm:inline-flex"
             >
               <InstagramIcon className="size-5" aria-hidden />
             </a>
@@ -77,7 +77,7 @@ export function SiteHeader({
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                buttonClasses("primary", "sm"),
+                buttonClasses("champagne", "sm"),
                 "hidden sm:inline-flex",
               )}
             >
@@ -90,7 +90,7 @@ export function SiteHeader({
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Fechar menu" : "Abrir menu"}
-            className="inline-flex rounded-full p-2 text-petrol-700 hover:bg-petrol-50 lg:hidden"
+            className="inline-flex rounded-full p-2 text-champagne-300 hover:bg-white/10 lg:hidden"
           >
             {open ? (
               <X className="size-6" aria-hidden />
@@ -103,15 +103,15 @@ export function SiteHeader({
 
       {/* Menu mobile */}
       {open && (
-        <div className="fixed inset-x-0 top-18 bottom-0 z-40 overflow-y-auto bg-offwhite lg:hidden">
+        <div className="fixed inset-x-0 top-18 bottom-0 z-40 overflow-y-auto bg-petrol-900 lg:hidden">
           <nav aria-label="Menu mobile" className="px-4 py-6">
-            <ul className="flex flex-col divide-y divide-sand">
+            <ul className="flex flex-col divide-y divide-white/10">
               {NAV.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="block py-4 font-display text-xl text-petrol-800"
+                    className="block py-4 font-display text-xl text-white"
                   >
                     {item.label}
                   </Link>
@@ -135,7 +135,10 @@ export function SiteHeader({
                   href={instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={buttonClasses("outline", "lg")}
+                  className={cn(
+                    buttonClasses("outline", "lg"),
+                    "border-champagne-300/50 text-champagne-200 hover:bg-white/10 hover:border-champagne-300",
+                  )}
                 >
                   <InstagramIcon className="size-5" aria-hidden />
                   Instagram
