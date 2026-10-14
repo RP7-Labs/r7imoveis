@@ -21,13 +21,8 @@ export const PROPERTY_TYPES: { value: PropertyType; label: string }[] = [
   { value: "apartamento", label: "Apartamento" },
   { value: "casa", label: "Casa" },
   { value: "cobertura", label: "Cobertura" },
-  { value: "sobrado", label: "Sobrado" },
   { value: "terreno", label: "Terreno" },
-  { value: "comercial", label: "Comercial" },
-  { value: "sala_comercial", label: "Sala comercial" },
-  { value: "galpao", label: "Galpão" },
   { value: "studio", label: "Studio" },
-  { value: "rural", label: "Rural" },
   { value: "outro", label: "Outro" },
 ];
 

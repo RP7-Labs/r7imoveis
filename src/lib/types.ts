@@ -2,13 +2,8 @@ export type PropertyType =
   | "apartamento"
   | "casa"
   | "cobertura"
-  | "sobrado"
   | "terreno"
-  | "comercial"
-  | "sala_comercial"
-  | "galpao"
   | "studio"
-  | "rural"
   | "outro";
 
 export type PropertyPurpose = "venda" | "locacao" | "venda_locacao";

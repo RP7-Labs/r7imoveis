@@ -23,8 +23,7 @@ export const metadata: Metadata = {
 
 const VALID_PURPOSES: PropertyPurpose[] = ["venda", "locacao", "venda_locacao"];
 const VALID_TYPES: PropertyType[] = [
-  "apartamento", "casa", "cobertura", "sobrado", "terreno",
-  "comercial", "sala_comercial", "galpao", "studio", "rural", "outro",
+  "apartamento", "casa", "cobertura", "terreno", "studio", "outro",
 ];
 
 function num(v: string | string[] | undefined): number | undefined {

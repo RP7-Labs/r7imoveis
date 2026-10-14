@@ -169,9 +169,9 @@ export default async function HomePage() {
                 img: "/images/categorias/cat-casas.jpg",
               },
               {
-                label: "Comerciais",
-                href: "/imoveis?property_type=comercial",
-                img: "/images/categorias/cat-comerciais.jpg",
+                label: "Coberturas",
+                href: "/imoveis?property_type=cobertura",
+                img: "/images/categorias/cat-coberturas.jpg",
               },
               {
                 label: "Terrenos",

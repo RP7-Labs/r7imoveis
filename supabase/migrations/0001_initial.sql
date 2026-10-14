@@ -103,8 +103,7 @@ create table public.properties (
   excerpt text,
   description text,
   property_type text not null check (property_type in (
-    'apartamento', 'casa', 'cobertura', 'sobrado', 'terreno',
-    'comercial', 'sala_comercial', 'galpao', 'studio', 'rural', 'outro'
+    'apartamento', 'casa', 'cobertura', 'terreno', 'studio', 'outro'
   )),
   purpose text not null default 'venda'
     check (purpose in ('venda', 'locacao', 'venda_locacao')),

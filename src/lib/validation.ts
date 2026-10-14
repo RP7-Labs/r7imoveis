@@ -55,8 +55,7 @@ export const propertySchema = z.object({
   excerpt: optionalString(300),
   description: optionalString(10000),
   property_type: z.enum([
-    "apartamento", "casa", "cobertura", "sobrado", "terreno",
-    "comercial", "sala_comercial", "galpao", "studio", "rural", "outro",
+    "apartamento", "casa", "cobertura", "terreno", "studio", "outro",
   ]),
   purpose: z.enum(["venda", "locacao", "venda_locacao"]),
   status: z.enum(["draft", "published", "sold", "rented", "archived"]),
