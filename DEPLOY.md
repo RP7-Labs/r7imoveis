@@ -1,15 +1,22 @@
 # Deploy — Vercel + domínio r7imoveissc.com.br
 
+> **Estado atual (2026-10-14)**
+> - Repo: `https://github.com/RP7-Labs/r7imoveis` (**público** — plano Hobby
+>   da Vercel não conecta repos privados de organização; avaliar voltar a
+>   privar se migrar para conta pessoal ou Vercel Pro)
+> - Vercel: projeto `sukces/r7imoveis`, produção em
+>   `https://r7imoveis-ten.vercel.app` — push na `main` faz deploy automático
+> - Domínio `r7imoveissc.com.br` + `www` adicionados ao projeto — **falta
+>   configurar o DNS no Registro.br** (ver §4)
+> - Supabase: **ainda não provisionado** — env vars na Vercel estão com
+>   placeholders; o site roda com dados de fallback (catálogo vazio, admin
+>   indisponível) até as credenciais reais serem configuradas
+> - Deploy manual alternativo: `vercel deploy --prod` (CLI já autenticado)
+
 ## 1. Repositório GitHub
 
-Crie um repositório **privado** no GitHub (sugestão de nome: `r7imoveis` ou
-`r7imoveissc`, na conta/organização da TagenTech ou do proprietário) e faça o
-push:
-
-```bash
-git remote add origin git@github.com:ORG/r7imoveis.git
-git push -u origin main
-```
+Repositório já criado: `https://github.com/RP7-Labs/r7imoveis` (público,
+necessário para a integração Git→Vercel no plano Hobby).
 
 ## 2. Supabase (produção)
 
@@ -45,18 +52,27 @@ O banco é compartilhado no Supabase da organização. Antes do deploy:
 
 ## 4. Domínio
 
-1. Em **Project → Settings → Domains**, adicione `r7imoveissc.com.br` e
-   `www.r7imoveissc.com.br`.
-2. No provedor de DNS do domínio (Registro.br ou similar):
+Os domínios `r7imoveissc.com.br` e `www.r7imoveissc.com.br` **já estão
+adicionados ao projeto Vercel**. Falta configurar o DNS no Registro.br
+(nameservers atuais: `*.auto.dns.br`). Escolha uma opção:
 
-   | Tipo | Nome | Valor |
-   |---|---|---|
-   | `A` | `@` | `76.76.21.21` (IP da Vercel) |
-   | `CNAME` | `www` | `cname.vercel-dns.com` |
+**Opção A — Nameservers Vercel (recomendado, gerenciamento total):**
 
-3. Aguarde a propagação (até 24–48h; normalmente minutos). O HTTPS é emitido
-   automaticamente pela Vercel.
-4. Recomendado: redirecionar `www` → raiz em **Domains → Redirect**.
+| Alterar nameservers para |
+|---|
+| `ns1.vercel-dns.com` |
+| `ns2.vercel-dns.com` |
+
+**Opção B — Manter DNS no Registro.br:**
+
+| Tipo | Nome | Valor |
+|---|---|---|
+| `A` | `@` | `76.76.21.21` (IP da Vercel) |
+| `CNAME` | `www` | `cname.vercel-dns.com` |
+
+Após configurar: aguarde a propagação (até 24–48h; normalmente minutos).
+O HTTPS é emitido automaticamente pela Vercel. Recomendado: redirecionar
+`www` → raiz em **Domains → Redirect**.
 
 ## 5. Pós-deploy — checklist
 
