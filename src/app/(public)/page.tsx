@@ -218,8 +218,8 @@ export default async function HomePage() {
         >
           <span className="relative block aspect-[16/10] sm:aspect-[21/9]">
             <Image
-              src="/images/banners/banner-skyline.jpg"
-              alt="Skyline do litoral de Santa Catarina ao entardecer"
+              src="/images/banners/banner-bc.jpg"
+              alt="Praia Central de Balneário Camboriú vista aérea, com a Ilha das Cabras"
               fill
               sizes="100vw"
               className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
