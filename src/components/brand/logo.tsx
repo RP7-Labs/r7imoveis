@@ -38,6 +38,8 @@ export function Logo({
       <img
         src={imageSrc}
         alt="R7 Investimentos Imobiliários"
+        width={variant === "lockup" ? 239 : 174}
+        height={variant === "lockup" ? 280 : 120}
         className={cn(
           box,
           "w-auto",

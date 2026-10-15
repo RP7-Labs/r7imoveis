@@ -13,7 +13,7 @@ const variants = {
   outline:
     "border border-petrol-500/30 text-petrol-600 hover:border-petrol-500 hover:bg-petrol-50",
   ghost: "text-petrol-600 hover:bg-petrol-50",
-  whatsapp: "bg-[#25D366] text-white hover:bg-[#1eb85a] active:bg-[#189e4d]",
+  whatsapp: "bg-[#0e7a3f] text-white hover:bg-[#0b6a36] active:bg-[#095c2e]",
   danger: "bg-red-600 text-white hover:bg-red-700",
 } as const;
 

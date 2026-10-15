@@ -46,7 +46,7 @@ export default async function ImoveisPage({
       <header className="mb-8">
         <div className="flex items-center gap-3">
           <span className="h-px w-8 bg-champagne-500" aria-hidden />
-          <p className="eyebrow text-champagne-600">Catálogo</p>
+          <p className="eyebrow text-champagne-700">Catálogo</p>
         </div>
         <h1 className="mt-4 font-display text-3xl font-light tracking-tight text-petrol-800 sm:text-4xl">
           Imóveis

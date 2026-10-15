@@ -36,7 +36,7 @@ export function SiteFooter({
     <footer className="bg-petrol-900 text-petrol-100">
       {/* Linha de marca espaçada — como no manual (p. 8) */}
       <div className="border-b border-petrol-800">
-        <p className="mx-auto max-w-7xl px-4 py-7 text-center text-[11px] font-semibold uppercase tracking-[0.55em] text-petrol-400 sm:px-6 lg:px-8">
+        <p className="mx-auto max-w-7xl px-4 py-7 text-center text-[11px] font-semibold uppercase tracking-[0.55em] text-petrol-300 sm:px-6 lg:px-8">
           R 7 · Investimentos Imobiliários
         </p>
       </div>
@@ -147,7 +147,7 @@ export function SiteFooter({
           </p>
           {settings.footer_text && <p>{settings.footer_text}</p>}
         </div>
-        <p className="mx-auto mt-3 max-w-7xl px-4 pb-4 text-center text-[11px] text-petrol-400 sm:px-6 sm:text-right lg:px-8">
+        <p className="mx-auto mt-3 max-w-7xl px-4 pb-4 text-center text-[11px] text-petrol-300 sm:px-6 sm:text-right lg:px-8">
           Desenvolvido por{" "}
           <a
             href="https://rp7.tech"

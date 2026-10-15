@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { PropertyCard } from "@/components/properties/property-card";
 import { differentialIcon } from "@/components/site/differential-icon";
+import { HeroVideo } from "@/components/site/hero-video";
 import { HomeSearch } from "@/components/site/home-search";
 import { ButtonLink, buttonClasses } from "@/components/ui/button";
 import { SITE_NAME, SITE_URL, STORAGE_BUCKETS } from "@/lib/constants";
@@ -28,7 +29,7 @@ export default async function HomePage() {
   );
   const heroPoster =
     storageUrl(settings.hero_image_path, STORAGE_BUCKETS.siteAssets) ??
-    "/images/hero/r7-hero-poster.jpg";
+    "/images/hero/r7-hero-poster.webp";
 
   const organizationLd = {
     "@context": "https://schema.org",
@@ -73,22 +74,7 @@ export default async function HomePage() {
       />
       {/* Hero — vídeo drone de BC + Joel & Daiany recortados, linguagem do manual */}
       <section className="relative overflow-hidden bg-petrol-900">
-        <video
-          aria-hidden
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={heroPoster}
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        >
-          <source
-            src="/video/hero-bc-mobile.mp4"
-            type="video/mp4"
-            media="(max-width: 767px)"
-          />
-          <source src="/video/hero-bc-desktop.mp4" type="video/mp4" />
-        </video>
+        <HeroVideo poster={heroPoster} />
         <div className="absolute inset-0 bg-gradient-to-r from-petrol-950/85 via-petrol-900/55 to-petrol-950/30" />
         <div className="absolute inset-0 bg-gradient-to-b from-petrol-950/40 via-transparent to-petrol-950/80" />
 
@@ -99,7 +85,9 @@ export default async function HomePage() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/equipe/joel-daiany.png"
+            src="/images/equipe/joel-daiany.webp"
+            width={682}
+            height={1024}
             alt=""
             className="h-full w-full object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]"
           />
@@ -155,7 +143,7 @@ export default async function HomePage() {
           <div>
             <div className="flex items-center gap-3">
               <span className="h-px w-8 bg-champagne-500" aria-hidden />
-              <p className="eyebrow text-champagne-600">Seleção R7</p>
+              <p className="eyebrow text-champagne-700">Seleção R7</p>
             </div>
             <h2 className="mt-4 font-display text-3xl font-light tracking-tight text-petrol-800 sm:text-4xl">
               Imóveis em destaque
@@ -190,7 +178,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-champagne-500" aria-hidden />
-            <p className="eyebrow text-champagne-600">Portfólio</p>
+            <p className="eyebrow text-champagne-700">Portfólio</p>
           </div>
           <h2 className="mt-4 font-display text-3xl font-light tracking-tight text-petrol-800 sm:text-4xl">
             Explore por categoria
@@ -227,7 +215,7 @@ export default async function HomePage() {
                 <span className="relative block aspect-[4/5]">
                   <Image
                     src={c.img}
-                    alt={c.label}
+                    alt=""
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -284,7 +272,7 @@ export default async function HomePage() {
           <div className="order-2 lg:order-1">
             <div className="flex items-center gap-3">
               <span className="h-px w-8 bg-champagne-500" aria-hidden />
-              <p className="eyebrow text-champagne-600">A R7</p>
+              <p className="eyebrow text-champagne-700">A R7</p>
             </div>
             <h2 className="mt-4 font-display text-3xl font-light tracking-tight text-petrol-800 sm:text-4xl">
               {settings.about_title}
@@ -377,7 +365,7 @@ export default async function HomePage() {
               Entrar em contato
             </ButtonLink>
           </div>
-          <p className="mt-12 text-[10px] font-semibold uppercase tracking-[0.55em] text-petrol-400">
+          <p className="mt-12 text-[10px] font-semibold uppercase tracking-[0.55em] text-petrol-300">
             R 7 · Investimentos Imobiliários
           </p>
         </div>

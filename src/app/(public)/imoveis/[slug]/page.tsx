@@ -424,7 +424,7 @@ async function RelatedProperties({
     <section className="mt-16 border-t border-sand pt-12">
       <div className="flex items-center gap-3">
         <span className="h-px w-8 bg-champagne-500" aria-hidden />
-        <p className="eyebrow text-champagne-600">Continue explorando</p>
+        <p className="eyebrow text-champagne-700">Continue explorando</p>
       </div>
       <h2 className="mt-4 font-display text-2xl font-light tracking-tight text-petrol-800 sm:text-3xl">
         Imóveis relacionados

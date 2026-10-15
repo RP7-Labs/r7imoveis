@@ -31,7 +31,7 @@ async function AboutContent() {
       <header>
         <div className="flex items-center gap-3">
           <span className="h-px w-8 bg-champagne-500" aria-hidden />
-          <p className="eyebrow text-champagne-600">Institucional</p>
+          <p className="eyebrow text-champagne-700">Institucional</p>
         </div>
         <h1 className="mt-4 font-display text-3xl font-light tracking-tight text-petrol-800 sm:text-4xl">
           {settings.about_title ?? settings.company_name}
@@ -51,7 +51,7 @@ async function AboutContent() {
 
       {/* Propósito — do Manual de Marca */}
       <blockquote className="mt-12 border-l-2 border-champagne-400 pl-6">
-        <p className="eyebrow text-champagne-600">Propósito</p>
+        <p className="eyebrow text-champagne-700">Propósito</p>
         <p className="mt-3 max-w-2xl font-display text-2xl font-light leading-snug text-petrol-800">
           Conectar o imóvel ideal para cada cliente, com atendimento
           personalizado.
@@ -70,7 +70,7 @@ async function AboutContent() {
         <section className="mt-14">
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-champagne-500" aria-hidden />
-            <p className="eyebrow text-champagne-600">Diferenciais</p>
+            <p className="eyebrow text-champagne-700">Diferenciais</p>
           </div>
           <h2 className="mt-4 font-display text-2xl font-light tracking-tight text-petrol-800">
             Nossos diferenciais
@@ -98,7 +98,7 @@ async function AboutContent() {
       <section className="mt-14">
         <div className="flex items-center gap-3">
           <span className="h-px w-8 bg-champagne-500" aria-hidden />
-          <p className="eyebrow text-champagne-600">Onde atuamos</p>
+          <p className="eyebrow text-champagne-700">Onde atuamos</p>
         </div>
         <h2 className="mt-4 font-display text-2xl font-light tracking-tight text-petrol-800">
           Litoral de Santa Catarina
