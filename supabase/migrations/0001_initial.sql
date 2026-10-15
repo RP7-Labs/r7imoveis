@@ -277,7 +277,7 @@ insert into public.site_settings (
   'Rua 3100, 780 — Centro, Balneário Camboriú/SC, 88330-304',
   '(47) 99634-6864',
   '5547996346864',
-  'daianyrezende7@gmail.com',
+  'comercial@r7imoveissc.com.br',
   'R7 Investimentos Imobiliários | Imóveis em Balneário Camboriú',
   'Compre, venda e invista em imóveis em Balneário Camboriú e Praia Brava com a R7 Investimentos Imobiliários.'
 )

@@ -39,7 +39,7 @@ const FALLBACK: SiteSettings = {
   whatsapp_number:
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5547996346864",
   whatsapp_message: null,
-  email: "daianyrezende7@gmail.com",
+  email: "comercial@r7imoveissc.com.br",
   address: "Rua 3100, 780 — Centro, Balneário Camboriú/SC, 88330-304",
   business_hours: null,
   instagram_url: "https://www.instagram.com/r7imoveissc/",
