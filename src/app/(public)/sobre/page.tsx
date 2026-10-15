@@ -40,8 +40,8 @@ async function AboutContent() {
 
       <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-card">
         <Image
-          src="/images/institucional/interior-moderno.jpg"
-          alt="Imóveis para viver, investir e crescer — composição institucional R7"
+          src="/images/institucional/bc-panorama.jpg"
+          alt="Panorama aéreo de Balneário Camboriú — Praia Central e Ilha das Cabras"
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 66vw"
