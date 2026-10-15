@@ -99,3 +99,39 @@ O HTTPS é emitido automaticamente pela Vercel. Recomendado: redirecionar
 - Não alterar o schema de produção direto no painel — sempre via migration
   nova em `supabase/migrations/`.
 - Não commitar `.env.local` nem chaves — o `.gitignore` já protege.
+
+## Backup do banco (Supabase)
+
+O plano Free do Supabase não faz backup automático diário — por isso o
+projeto tem exportação própria:
+
+```bash
+npm run backup
+```
+
+Gera `backups/AAAA-MM-DD-HHMM/` com todas as tabelas em JSON, os arquivos
+dos buckets de storage e o `schema.sql`. A pasta `backups/` está no
+`.gitignore` — nunca commitar (leads contêm dados pessoais).
+
+### Restore em outro projeto
+
+```bash
+# 1. Novo projeto Supabase: rode a migration 0001_initial.sql no SQL Editor
+# 2. Aponte .env.local para o projeto NOVO
+# 3. Execute:
+npm run restore -- backups/AAAA-MM-DD-HHMM
+```
+
+Faz upsert por PK em ordem que respeita FKs. Contas de `auth.users` não
+são exportadas — recrie os usuários no projeto novo e promova a role em
+`profiles`.
+
+### Backup agendado (opções)
+
+- **Agendador de Tarefas do Windows**: agendar `npm run backup` diário
+  nesta máquina (copie `backups/` para nuvem/HD externo para redundância).
+- **GitHub Action → repo privado**: agendar um workflow que exporta e
+  commita num repositório privado (ex.: `r7imoveis-backups`). Não usar
+  artifacts em repo público — artifacts de repo público são públicos.
+- **Supabase Pro** (~US$25/mês): backups diários nativos + point-in-time
+  recovery — o caminho quando o projeto crescer.

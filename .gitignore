@@ -34,6 +34,9 @@ yarn-error.log*
 .env*
 !.env.example
 
+# backups locais do Supabase (contêm dados pessoais de leads — nunca commitar)
+/backups/
+
 # vercel
 .vercel
 
