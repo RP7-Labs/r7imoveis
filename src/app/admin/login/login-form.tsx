@@ -1,6 +1,7 @@
 "use client";
 
 import { Loader2 } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -71,6 +72,14 @@ export function LoginForm({ next }: { next: string }) {
         {loading && <Loader2 className="size-4 animate-spin" aria-hidden />}
         {loading ? "Entrando…" : "Entrar"}
       </Button>
+      <p className="mt-4 text-center">
+        <Link
+          href="/admin/recuperar"
+          className="text-sm text-graphite-500 underline hover:text-petrol-600"
+        >
+          Esqueci minha senha
+        </Link>
+      </p>
     </form>
   );
 }

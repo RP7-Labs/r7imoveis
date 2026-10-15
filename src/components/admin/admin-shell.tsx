@@ -87,6 +87,12 @@ export function AdminShell({
         >
           Ver site
         </Link>
+        <Link
+          href="/admin/atualizar-senha"
+          className="flex items-center gap-1.5 rounded-lg border border-petrol-700 px-3 py-1.5 text-xs text-petrol-200 hover:bg-petrol-800"
+        >
+          Senha
+        </Link>
         <button
           type="button"
           onClick={signOut}
