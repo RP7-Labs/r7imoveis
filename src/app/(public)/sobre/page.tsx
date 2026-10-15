@@ -94,6 +94,52 @@ async function AboutContent() {
         </section>
       )}
 
+      {/* Onde atuamos — regiões de cobertura (imagens ilustrativas) */}
+      <section className="mt-14">
+        <div className="flex items-center gap-3">
+          <span className="h-px w-8 bg-champagne-500" aria-hidden />
+          <p className="eyebrow text-champagne-600">Onde atuamos</p>
+        </div>
+        <h2 className="mt-4 font-display text-2xl font-light tracking-tight text-petrol-800">
+          Litoral de Santa Catarina
+        </h2>
+        <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              img: "/images/regioes/balneario-camboriu.jpg",
+              label: "Balneário Camboriú",
+            },
+            {
+              img: "/images/regioes/praia-brava.jpg",
+              label: "Praia Brava",
+            },
+            {
+              img: "/images/regioes/costa-litoral.jpg",
+              label: "Costa catarinense",
+            },
+          ].map((r) => (
+            <li
+              key={r.label}
+              className="group relative block overflow-hidden rounded-3xl"
+            >
+              <span className="relative block aspect-[4/5]">
+                <Image
+                  src={r.img}
+                  alt={`Vista aérea ilustrativa — ${r.label}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 30vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </span>
+              <span className="absolute inset-0 bg-gradient-to-t from-petrol-950/70 via-petrol-950/10 to-transparent" />
+              <span className="absolute inset-x-0 bottom-0 p-5">
+                <span className="eyebrow text-champagne-200">{r.label}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <div className="relative mt-14 overflow-hidden rounded-[2rem] bg-petrol-800 p-10 text-center">
         <div
           aria-hidden

@@ -161,7 +161,7 @@ export default async function HomePage() {
               {
                 label: "Apartamentos",
                 href: "/imoveis?property_type=apartamento",
-                img: "/images/categorias/cat-apartamentos-bc.jpg",
+                img: "/images/categorias/cat-apartamentos.jpg",
               },
               {
                 label: "Casas",
@@ -171,7 +171,7 @@ export default async function HomePage() {
               {
                 label: "Lançamentos",
                 href: "/imoveis?sort=recent",
-                img: "/images/categorias/cat-lancamentos-bc.jpg",
+                img: "/images/categorias/cat-lancamentos.jpg",
               },
               {
                 label: "Terrenos",
@@ -268,8 +268,8 @@ export default async function HomePage() {
             />
             <div className="rounded-arch relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/images/institucional/bc-roda-gigante.jpg"
-                alt="Balneário Camboriú vista aérea — roda gigante e orla da Praia Central"
+                src="/images/institucional/escritorio-conceitual.jpg"
+                alt="Recepção de escritório imobiliário contemporâneo — composição ilustrativa"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover"

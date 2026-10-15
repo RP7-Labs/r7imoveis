@@ -42,7 +42,6 @@ function monogramCut({ buf, width, height }) {
   const THRESH = 0.02;
   let y = 0;
   while (y < height && rowAlpha[y] <= THRESH) y++; // pula margem superior vazia
-  const firstContent = y;
   let gapStart = -1;
   for (; y < height; y++) {
     if (rowAlpha[y] <= THRESH) {
