@@ -13,6 +13,7 @@ import { formatPrice } from "@/lib/format";
 import { storageUrl } from "@/lib/storage";
 import { createClient } from "@/lib/supabase/server";
 import { PropertyRowActions } from "./row-actions";
+import { SyncDwvButton } from "./sync-button";
 
 export const metadata = { title: "Imóveis" };
 
@@ -78,13 +79,16 @@ export default async function AdminImoveisPage({
             {(count ?? 0) === 1 ? "" : "s"}
           </p>
         </div>
-        <Link
-          href="/admin/imoveis/novo"
-          className={buttonClasses("primary", "md")}
-        >
-          <Plus className="size-4" aria-hidden />
-          Novo imóvel
-        </Link>
+        <div className="flex items-center gap-3">
+          <SyncDwvButton />
+          <Link
+            href="/admin/imoveis/novo"
+            className={buttonClasses("primary", "md")}
+          >
+            <Plus className="size-4" aria-hidden />
+            Novo imóvel
+          </Link>
+        </div>
       </div>
 
       <form className="mt-6 flex flex-wrap gap-3" action="/admin/imoveis">

@@ -342,6 +342,31 @@ export async function movePropertyImage(
 }
 
 // ---------------------------------------------------------------------------
+// Integração DWV
+// ---------------------------------------------------------------------------
+
+export async function syncDwvNow(): Promise<
+  { ok: true; summary: string } | { ok: false; error: string }
+> {
+  await requireStaff();
+  try {
+    const { createServiceClient } = await import("@/lib/supabase/service");
+    const { syncDwv } = await import("@/lib/dwv");
+    const r = await syncDwv(createServiceClient());
+    updateTag("properties");
+    return {
+      ok: true,
+      summary: `${r.upserted} de ${r.total} imóveis sincronizados, ${r.imagesLinked} fotos vinculadas, ${r.archived} arquivados`,
+    };
+  } catch (err) {
+    return {
+      ok: false,
+      error: err instanceof Error ? err.message : "Erro ao sincronizar.",
+    };
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Leads
 // ---------------------------------------------------------------------------
 

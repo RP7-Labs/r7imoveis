@@ -64,6 +64,8 @@ export interface Property {
   features: string[];
   seo_title: string | null;
   seo_description: string | null;
+  dwv_id: string | null;
+  dwv_synced_at: string | null;
   created_by: string | null;
   created_at: string;
   updated_at: string;

@@ -128,10 +128,30 @@ são exportadas — recrie os usuários no projeto novo e promova a role em
 
 ### Backup agendado (opções)
 
-- **Agendador de Tarefas do Windows**: agendar `npm run backup` diário
-  nesta máquina (copie `backups/` para nuvem/HD externo para redundância).
+- **Agendador de Tarefas do Windows**: tarefa `R7-Backup-Supabase` já
+  criada — roda `scripts/backup-daily.bat` todo dia às 08h. Copie
+  `backups/` para nuvem/HD externo para redundância.
 - **GitHub Action → repo privado**: agendar um workflow que exporta e
   commita num repositório privado (ex.: `r7imoveis-backups`). Não usar
   artifacts em repo público — artifacts de repo público são públicos.
 - **Supabase Pro** (~US$25/mês): backups diários nativos + point-in-time
   recovery — o caminho quando o projeto crescer.
+
+## Integração DWV (catálogo de imóveis)
+
+O site pode importar automaticamente os imóveis selecionados na
+plataforma DWV (api.dwvapp.com.br):
+
+1. A imobiliária gera o token em: DWV → Integrações → token para site
+2. Configurar `DWV_API_TOKEN` no `.env.local` e na Vercel (Production)
+3. `CRON_SECRET` protege `/api/cron/sync-dwv` — Vercel Cron roda diário
+   às 11h UTC (08h BRT) via `vercel.json`
+4. Manual: botão **"Sincronizar DWV"** em `/admin/imoveis`
+
+Comportamento do sync (`src/lib/dwv.ts`):
+- Upsert por `dwv_id` — edições manuais de SEO/slug são preservadas
+- Fotos são vinculadas como URLs do CDN da DWV (não copiadas);
+  fotos enviadas manualmente pelo admin são preservadas
+- Imóveis que saem da integração são arquivados automaticamente
+- Tipos mapeados: apartment→apartamento, house→casa, penthouse→cobertura,
+  land→terreno, studio/kitnet→studio, demais→outro
