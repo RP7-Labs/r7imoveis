@@ -55,7 +55,7 @@ export const BRAZILIAN_STATES = [
   "SP", "SE", "TO",
 ];
 
-export const MAX_IMAGE_SIZE_MB = 8;
+export const MAX_IMAGE_SIZE_MB = 40;
 export const ACCEPTED_IMAGE_TYPES = [
   "image/jpeg",
   "image/png",

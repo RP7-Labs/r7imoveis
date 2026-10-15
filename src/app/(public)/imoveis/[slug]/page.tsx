@@ -10,6 +10,7 @@ import {
   Share2,
 } from "lucide-react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { PropertyCard } from "@/components/properties/property-card";
@@ -128,6 +129,26 @@ export default async function ImovelPage({ params }: Props) {
 
   const features = Array.isArray(property.features) ? property.features : [];
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Imóveis",
+        item: `${SITE_URL}/imoveis`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: property.title,
+        item: `${SITE_URL}/imoveis/${property.slug}`,
+      },
+    ],
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "RealEstateListing",
@@ -160,6 +181,28 @@ export default async function ImovelPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+
+      <nav aria-label="Breadcrumb" className="mb-6">
+        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-graphite-400">
+          <li>
+            <Link href="/" className="hover:text-petrol-600">
+              Home
+            </Link>
+          </li>
+          <li aria-hidden>/</li>
+          <li>
+            <Link href="/imoveis" className="hover:text-petrol-600">
+              Imóveis
+            </Link>
+          </li>
+          <li aria-hidden>/</li>
+          <li className="truncate text-graphite-600">{property.title}</li>
+        </ol>
+      </nav>
 
       <div className="grid gap-10 lg:grid-cols-3">
         <div className="lg:col-span-2">

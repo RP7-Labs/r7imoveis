@@ -11,7 +11,7 @@ import { PropertyCard } from "@/components/properties/property-card";
 import { differentialIcon } from "@/components/site/differential-icon";
 import { HomeSearch } from "@/components/site/home-search";
 import { ButtonLink, buttonClasses } from "@/components/ui/button";
-import { STORAGE_BUCKETS } from "@/lib/constants";
+import { SITE_NAME, SITE_URL, STORAGE_BUCKETS } from "@/lib/constants";
 import {
   getFeaturedProperties,
   getLocationFacets,
@@ -30,8 +30,47 @@ export default async function HomePage() {
     storageUrl(settings.hero_image_path, STORAGE_BUCKETS.siteAssets) ??
     "/images/hero/r7-hero-poster.jpg";
 
+  const organizationLd = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    name: settings.company_name || SITE_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/brand/r7-lockup-petrol.png`,
+    ...(settings.email && { email: settings.email }),
+    ...(settings.phone && { telephone: settings.phone }),
+    ...(settings.address && {
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: settings.address,
+        addressCountry: "BR",
+      },
+    }),
+    areaServed: ["Balneário Camboriú", "Praia Brava", "Santa Catarina"],
+    sameAs: [
+      settings.instagram_url,
+      settings.facebook_url,
+      settings.linkedin_url,
+      settings.youtube_url,
+    ].filter(Boolean),
+  };
+
+  const websiteLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: settings.company_name || SITE_NAME,
+    url: SITE_URL,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
+      />
       {/* Hero — vídeo drone de BC + Joel & Daiany recortados, linguagem do manual */}
       <section className="relative overflow-hidden bg-petrol-900">
         <video

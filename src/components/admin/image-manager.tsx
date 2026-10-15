@@ -23,6 +23,7 @@ import {
   MAX_IMAGE_SIZE_MB,
   STORAGE_BUCKETS,
 } from "@/lib/constants";
+import { compressImage } from "@/lib/image-compress";
 import { storageUrl } from "@/lib/storage";
 import { createClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
@@ -30,9 +31,11 @@ import type { PropertyImage } from "@/lib/types";
 
 export function ImageManager({
   propertyId,
+  propertyTitle,
   images: initialImages,
 }: {
   propertyId: string;
+  propertyTitle: string;
   images: PropertyImage[];
 }) {
   const router = useRouter();
@@ -59,19 +62,25 @@ export function ImageManager({
 
       setUploading((n) => n + 1);
       try {
-        const ext = file.name.split(".").pop() ?? "jpg";
+        const compressed = await compressImage(file);
+        const ext = compressed.name.split(".").pop() ?? "webp";
         const path = `${propertyId}/${crypto.randomUUID()}.${ext}`;
 
         const { error: upErr } = await supabase.storage
           .from(STORAGE_BUCKETS.propertyImages)
-          .upload(path, file, { cacheControl: "31536000", upsert: false });
+          .upload(path, compressed.blob, {
+            cacheControl: "31536000",
+            upsert: false,
+            contentType: compressed.type,
+          });
 
         if (upErr) {
           setError(`Falha no upload de ${file.name}: ${upErr.message}`);
           continue;
         }
 
-        const result = await registerPropertyImage(propertyId, path, file.name);
+        const alt = `${propertyTitle} — foto`;
+        const result = await registerPropertyImage(propertyId, path, alt);
         if (!result.ok) {
           setError(result.error ?? "Erro ao registrar imagem.");
           continue;

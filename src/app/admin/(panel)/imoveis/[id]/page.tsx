@@ -65,6 +65,7 @@ export default async function EditarImovelPage({
         <PropertyForm property={property} />
         <ImageManager
           propertyId={property.id}
+          propertyTitle={property.title}
           images={(images ?? []) as PropertyImage[]}
         />
       </div>
