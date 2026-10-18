@@ -205,7 +205,7 @@ export default async function ImovelPage({ params }: Props) {
       </nav>
 
       <div className="grid gap-10 lg:grid-cols-3">
-        <div className="lg:col-span-2">
+        <div className="min-w-0 lg:col-span-2">
           <PropertyGallery
             images={property.property_images}
             title={property.title}
