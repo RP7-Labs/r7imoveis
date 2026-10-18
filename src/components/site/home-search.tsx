@@ -26,9 +26,12 @@ export function HomeSearch({ cities }: { cities: string[] }) {
 
   return (
     <form
+      action="/imoveis"
+      method="get"
       onSubmit={submit}
       className="rounded-[1.75rem] bg-white/95 p-5 shadow-card backdrop-blur sm:p-6"
     >
+      <input type="hidden" name="purpose" value={purpose} />
       <div
         role="tablist"
         aria-label="Finalidade"

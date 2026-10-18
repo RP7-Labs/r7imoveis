@@ -58,6 +58,8 @@ export function PropertyFilters({
 
   const formContent = (
     <form
+      action="/imoveis"
+      method="get"
       onSubmit={(e) => {
         e.preventDefault();
         apply(e.currentTarget);
