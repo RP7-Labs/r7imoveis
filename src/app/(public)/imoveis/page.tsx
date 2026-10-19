@@ -97,12 +97,14 @@ async function Results({
   const purpose = str(sp.purpose);
   const type = str(sp.property_type);
   const sort = str(sp.sort);
+  const launch = str(sp.launch);
 
   const filters: Filters = {
     q: str(sp.q),
     purpose: VALID_PURPOSES.includes(purpose as PropertyPurpose)
       ? (purpose as PropertyPurpose)
       : undefined,
+    launch: launch === "1" || launch === "true" ? true : undefined,
     property_type: VALID_TYPES.includes(type as PropertyType)
       ? (type as PropertyType)
       : undefined,

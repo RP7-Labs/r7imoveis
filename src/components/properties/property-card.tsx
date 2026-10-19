@@ -35,9 +35,11 @@ export function PropertyCard({
       ? { label: "Vendido", tone: "red" as const }
       : property.status === "rented"
         ? { label: "Alugado", tone: "amber" as const }
-        : property.featured
-          ? { label: "Destaque", tone: "champagne" as const }
-          : null;
+        : property.is_launch
+          ? { label: "Lançamento", tone: "amber" as const }
+          : property.featured
+            ? { label: "Destaque", tone: "champagne" as const }
+            : null;
 
   const specs = [
     property.bedrooms != null && {

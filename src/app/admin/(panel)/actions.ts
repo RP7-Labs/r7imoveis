@@ -69,6 +69,7 @@ export async function saveProperty(
     purpose: data.purpose,
     status: data.status,
     featured: data.featured,
+    is_launch: data.is_launch,
     price: data.price ?? null,
     currency: data.currency || "BRL",
     condo_fee: data.condo_fee ?? null,

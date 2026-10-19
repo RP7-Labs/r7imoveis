@@ -60,6 +60,7 @@ export const propertySchema = z.object({
   purpose: z.enum(["venda", "locacao", "venda_locacao"]),
   status: z.enum(["draft", "published", "sold", "rented", "archived"]),
   featured: z.coerce.boolean().default(false),
+  is_launch: z.coerce.boolean().default(false),
   price: optionalNumber(10_000_000_000),
   currency: z.string().trim().max(3).default("BRL"),
   condo_fee: optionalNumber(1_000_000),

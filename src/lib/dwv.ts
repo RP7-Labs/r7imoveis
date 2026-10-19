@@ -224,6 +224,7 @@ export function mapDwvProperty(item: DwvProperty): MappedDwvProperty | null {
       property_type: propertyType,
       purpose: rent ? "locacao" : "venda",
       status: item.status === "active" ? "published" : "draft",
+      is_launch: Boolean(unit),
       price,
       currency: "BRL",
       zip_code: address?.zip_code ?? null,

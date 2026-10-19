@@ -52,6 +52,7 @@ export function PropertyForm({ property }: { property?: Property }) {
     const raw: Record<string, unknown> = { id: property?.id };
     for (const [k, v] of fd.entries()) raw[k] = v;
     raw.featured = fd.get("featured") === "on";
+    raw.is_launch = fd.get("is_launch") === "on";
     raw.features = String(fd.get("features") ?? "");
     if (intent === "draft") raw.status = "draft";
 
@@ -176,6 +177,15 @@ export function PropertyForm({ property }: { property?: Property }) {
               className="size-4 rounded border-graphite-300 accent-petrol-500"
             />
             Imóvel em destaque na home
+          </label>
+          <label className="flex items-center gap-2.5 text-sm text-graphite-600">
+            <input
+              type="checkbox"
+              name="is_launch"
+              defaultChecked={property?.is_launch}
+              className="size-4 rounded border-graphite-300 accent-petrol-500"
+            />
+            Lançamento (aparece na categoria Lançamentos)
           </label>
         </div>
       </Section>

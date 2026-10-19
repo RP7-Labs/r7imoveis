@@ -38,6 +38,7 @@ export interface Property {
   purpose: PropertyPurpose;
   status: PropertyStatus;
   featured: boolean;
+  is_launch: boolean;
   published_at: string | null;
   price: number | null;
   currency: string;
@@ -139,6 +140,7 @@ export interface Profile {
 export interface PropertyFilters {
   q?: string;
   purpose?: PropertyPurpose;
+  launch?: boolean;
   property_type?: PropertyType;
   city?: string;
   neighborhood?: string;

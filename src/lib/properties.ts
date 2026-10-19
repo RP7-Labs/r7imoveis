@@ -29,6 +29,7 @@ function buildListQuery(supabase: PublicClient, f: PropertyFilters) {
     );
   }
   if (f.property_type) query = query.eq("property_type", f.property_type);
+  if (f.launch) query = query.eq("is_launch", true);
   if (f.city) query = query.ilike("city", f.city);
   if (f.neighborhood) query = query.ilike("neighborhood", f.neighborhood);
   if (f.min_price != null) query = query.gte("price", f.min_price);

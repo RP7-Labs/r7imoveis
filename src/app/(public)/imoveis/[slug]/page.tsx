@@ -219,6 +219,7 @@ export default async function ImovelPage({ params }: Props) {
               <Badge tone="champagne">
                 {propertyTypeLabel(property.property_type)}
               </Badge>
+              {property.is_launch && <Badge tone="amber">Lançamento</Badge>}
               {property.featured && <Badge tone="amber">Destaque</Badge>}
             </div>
 
