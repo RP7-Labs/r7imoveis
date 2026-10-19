@@ -78,10 +78,10 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-petrol-950/85 via-petrol-900/55 to-petrol-950/30" />
         <div className="absolute inset-0 bg-gradient-to-b from-petrol-950/40 via-transparent to-petrol-950/80" />
 
-        {/* Joel & Daiany — recorte sobre o vídeo, como no rascunho da Daiany */}
+        {/* Joel & Daiany — recorte sobre o vídeo (desktop: absoluto à direita) */}
         <div
           aria-hidden
-          className="pointer-events-none absolute right-0 top-[30%] aspect-[682/1024] h-[50%] max-h-[430px] sm:top-[26%] sm:h-[52%] sm:max-h-[480px] lg:bottom-0 lg:top-auto lg:h-[80%] lg:max-h-none"
+          className="pointer-events-none absolute bottom-0 right-0 hidden aspect-[682/1024] h-[80%] lg:block"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -93,29 +93,24 @@ export default async function HomePage() {
           />
         </div>
 
-        {/* Scrim extra sobre o recorte no mobile — mantém texto/botões legíveis */}
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-gradient-to-r from-petrol-950/80 via-petrol-950/35 to-transparent lg:hidden"
-        />
-
         <div className="relative mx-auto flex min-h-[92svh] max-w-7xl flex-col justify-center px-4 pb-44 pt-28 sm:px-6 lg:px-8 lg:pb-40">
-          <div className="max-w-[62%] sm:max-w-[55%] lg:max-w-2xl">
+          <div className="flex items-end">
+            <div className="w-[56%] sm:w-[55%] lg:w-full lg:max-w-2xl">
             <div className="flex items-center gap-4">
               <span className="h-px w-10 bg-champagne-400" aria-hidden />
               <p className="eyebrow text-champagne-300">
                 R7 Investimentos Imobiliários
               </p>
             </div>
-            <h1 className="mt-7 font-display text-4xl font-light leading-[1.06] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-7 font-display text-[2rem] font-light leading-[1.06] tracking-tight text-white max-sm:mt-5 sm:text-6xl lg:text-7xl">
               {settings.hero_title}
             </h1>
             {settings.hero_subtitle && (
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-petrol-100">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-petrol-100 max-sm:mt-4 max-sm:text-base">
                 {settings.hero_subtitle}
               </p>
             )}
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap gap-3 max-sm:mt-6">
               <ButtonLink
                 href="/imoveis"
                 variant="champagne"
@@ -136,6 +131,19 @@ export default async function HomePage() {
                   Falar no WhatsApp
                 </a>
               )}
+            </div>
+            </div>
+
+            {/* Joel & Daiany — coluna em fluxo no mobile/tablet (nunca sobrepõe o texto) */}
+            <div aria-hidden className="w-[44%] self-end max-sm:mb-10 sm:w-[45%] lg:hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/equipe/joel-daiany.webp"
+                width={682}
+                height={1024}
+                alt=""
+                className="h-auto w-full drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]"
+              />
             </div>
           </div>
         </div>
