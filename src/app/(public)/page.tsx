@@ -81,7 +81,7 @@ export default async function HomePage() {
         {/* Joel & Daiany — recorte sobre o vídeo, como no rascunho da Daiany */}
         <div
           aria-hidden
-          className="pointer-events-none absolute bottom-[104px] right-0 aspect-[682/1024] h-60 sm:h-64 lg:bottom-0 lg:h-[80%] lg:max-h-none"
+          className="pointer-events-none absolute right-0 top-[30%] aspect-[682/1024] h-[50%] max-h-[430px] sm:top-[26%] sm:h-[52%] sm:max-h-[480px] lg:bottom-0 lg:top-auto lg:h-[80%] lg:max-h-none"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -93,8 +93,14 @@ export default async function HomePage() {
           />
         </div>
 
-        <div className="relative mx-auto flex min-h-[92svh] max-w-7xl flex-col justify-center px-4 pb-[360px] pt-28 sm:px-6 sm:pb-[380px] lg:px-8 lg:pb-40">
-          <div className="max-w-2xl">
+        {/* Scrim extra sobre o recorte no mobile — mantém texto/botões legíveis */}
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-r from-petrol-950/80 via-petrol-950/35 to-transparent lg:hidden"
+        />
+
+        <div className="relative mx-auto flex min-h-[92svh] max-w-7xl flex-col justify-center px-4 pb-44 pt-28 sm:px-6 lg:px-8 lg:pb-40">
+          <div className="max-w-[62%] sm:max-w-[55%] lg:max-w-2xl">
             <div className="flex items-center gap-4">
               <span className="h-px w-10 bg-champagne-400" aria-hidden />
               <p className="eyebrow text-champagne-300">
@@ -110,7 +116,12 @@ export default async function HomePage() {
               </p>
             )}
             <div className="mt-10 flex flex-wrap gap-3">
-              <ButtonLink href="/imoveis" variant="champagne" size="lg">
+              <ButtonLink
+                href="/imoveis"
+                variant="champagne"
+                size="lg"
+                className="max-sm:px-5 max-sm:py-2.5 max-sm:text-sm"
+              >
                 Explorar imóveis
                 <ArrowRight className="size-5" aria-hidden />
               </ButtonLink>
@@ -119,7 +130,7 @@ export default async function HomePage() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={buttonClasses("whatsapp", "lg")}
+                  className={buttonClasses("whatsapp", "lg", "max-sm:px-5 max-sm:py-2.5 max-sm:text-sm")}
                 >
                   <MessageCircle className="size-5" aria-hidden />
                   Falar no WhatsApp
