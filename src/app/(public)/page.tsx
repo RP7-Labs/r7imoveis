@@ -81,7 +81,7 @@ export default async function HomePage() {
         {/* Joel & Daiany — recorte sobre o vídeo, como no rascunho da Daiany */}
         <div
           aria-hidden
-          className="pointer-events-none absolute bottom-0 right-0 aspect-[682/1024] h-[30%] max-h-[290px] sm:h-[35%] sm:max-h-[320px] lg:h-[80%] lg:max-h-none"
+          className="pointer-events-none absolute bottom-[104px] right-0 aspect-[682/1024] h-60 sm:h-64 lg:bottom-0 lg:h-[80%] lg:max-h-none"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -93,7 +93,7 @@ export default async function HomePage() {
           />
         </div>
 
-        <div className="relative mx-auto flex min-h-[92svh] max-w-7xl flex-col justify-center px-4 pb-[300px] pt-28 sm:px-6 sm:pb-[330px] lg:px-8 lg:pb-40">
+        <div className="relative mx-auto flex min-h-[92svh] max-w-7xl flex-col justify-center px-4 pb-[360px] pt-28 sm:px-6 sm:pb-[380px] lg:px-8 lg:pb-40">
           <div className="max-w-2xl">
             <div className="flex items-center gap-4">
               <span className="h-px w-10 bg-champagne-400" aria-hidden />
