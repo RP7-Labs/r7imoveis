@@ -134,16 +134,18 @@ export default async function HomePage() {
             </div>
             </div>
 
-            {/* Joel & Daiany — coluna em fluxo no mobile/tablet (nunca sobrepõe o texto) */}
+            {/* Joel & Daiany — retrato em arco (motivo da marca) no mobile/tablet */}
             <div aria-hidden className="w-[44%] self-end max-sm:mb-10 sm:w-[45%] lg:hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/equipe/joel-daiany.webp"
-                width={682}
-                height={1024}
-                alt=""
-                className="h-auto w-full drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]"
-              />
+              <div className="overflow-hidden rounded-t-full bg-gradient-to-b from-petrol-600/50 via-petrol-800/80 to-petrol-950 pt-8 ring-1 ring-champagne-400/40 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.6)]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/equipe/joel-daiany.webp"
+                  width={682}
+                  height={1024}
+                  alt=""
+                  className="h-auto w-full"
+                />
+              </div>
             </div>
           </div>
         </div>
