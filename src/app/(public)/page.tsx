@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { PropertyCard } from "@/components/properties/property-card";
 import { differentialIcon } from "@/components/site/differential-icon";
@@ -20,6 +21,14 @@ import {
 import { getSiteSettings } from "@/lib/settings";
 import { storageUrl } from "@/lib/storage";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Imóveis em Balneário Camboriú e Praia Brava | R7 Investimentos",
+  },
+  description:
+    "Compre, venda ou invista em apartamentos, casas, coberturas e lançamentos em Balneário Camboriú e Praia Brava. Curadoria imobiliária da R7. Fale com um especialista.",
+};
 
 export default async function HomePage() {
   const settings = await getSiteSettings();
@@ -62,6 +71,17 @@ export default async function HomePage() {
     url: SITE_URL,
   };
 
+  const navigationLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: [
+      { "@type": "SiteNavigationElement", position: 1, name: "Imóveis", url: `${SITE_URL}/imoveis` },
+      { "@type": "SiteNavigationElement", position: 2, name: "Lançamentos", url: `${SITE_URL}/imoveis?launch=1` },
+      { "@type": "SiteNavigationElement", position: 3, name: "A R7", url: `${SITE_URL}/sobre` },
+      { "@type": "SiteNavigationElement", position: 4, name: "Contato", url: `${SITE_URL}/contato` },
+    ],
+  };
+
   return (
     <>
       <script
@@ -71,6 +91,10 @@ export default async function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(navigationLd) }}
       />
       {/* Hero — vídeo drone de BC + Joel & Daiany recortados, linguagem do manual */}
       <section className="relative overflow-hidden bg-petrol-900">

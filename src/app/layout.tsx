@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | R7 Investimentos Imobiliários",
   },
   description:
-    "Imóveis selecionados para compra, venda e investimento em Balneário Camboriú e Praia Brava. R7 Investimentos Imobiliários.",
+    "Compre, venda ou invista em apartamentos, casas, coberturas e lançamentos em Balneário Camboriú e Praia Brava. Curadoria imobiliária da R7. Fale com um especialista.",
   openGraph: {
     siteName: "R7 Investimentos Imobiliários",
     locale: "pt_BR",
