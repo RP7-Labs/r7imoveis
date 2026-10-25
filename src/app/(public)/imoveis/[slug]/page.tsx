@@ -7,7 +7,6 @@ import {
   MapPin,
   MessageCircle,
   Ruler,
-  Share2,
 } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -15,6 +14,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { PropertyCard } from "@/components/properties/property-card";
 import { PropertyGallery } from "@/components/properties/property-gallery";
+import { ShareButtons } from "@/components/properties/share-buttons";
 import { LeadForm } from "@/components/site/lead-form";
 import { Badge } from "@/components/ui/badge";
 import { buttonClasses } from "@/components/ui/button";
@@ -75,7 +75,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       url: `${SITE_URL}/imoveis/${property.slug}`,
       type: "website",
-      images: image ? [{ url: image }] : undefined,
+      images: image ? [{ url: image, alt: property.title }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: image ? [image] : undefined,
     },
   };
 }
@@ -382,15 +388,15 @@ export default async function ImovelPage({ params }: Props) {
                     Chamar no WhatsApp
                   </a>
                 )}
-                <a
-                  href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${property.title} — ${SITE_URL}/imoveis/${property.slug}`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={buttonClasses("outline", "md", "w-full")}
-                >
-                  <Share2 className="size-4" aria-hidden />
-                  Compartilhar
-                </a>
+              </div>
+
+              <div className="mt-5 border-t border-sand pt-5">
+                <ShareButtons
+                  url={`${SITE_URL}/imoveis/${property.slug}`}
+                  text={`${property.title} — ${propertyTypeLabel(property.property_type)} para ${purposeLabel(property.purpose).toLowerCase()} em ${location} · ${formatPrice(property.price, property.currency, property.purpose)}`}
+                  emailSubject={`${property.title} — imóvel em ${property.city ?? "Balneário Camboriú"} | R7 Investimentos`}
+                  emailBody={`Olá,\n\nEncontrei este imóvel no site da R7 Investimentos Imobiliários e achei que poderia te interessar:\n\n${property.title}\n${propertyTypeLabel(property.property_type)} para ${purposeLabel(property.purpose).toLowerCase()} em ${location}\n${formatPrice(property.price, property.currency, property.purpose)} — Ref. ${property.reference_code}\n\nVeja fotos e detalhes:\n${SITE_URL}/imoveis/${property.slug}`}
+                />
               </div>
             </div>
 
